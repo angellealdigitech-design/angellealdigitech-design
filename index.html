@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ángel Leal Delgado | Portafolio Técnico ASIR</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -13,77 +13,187 @@
     }
     body {
       background-color: #0d1117;
-      color: #f0f6fc;
+      color: #c9d1d9;
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
+      line-height: 1.6;
+      padding: 0 1rem 3rem;
     }
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
     header {
-      text-align: center;
-      padding: 3.5rem 1.5rem 2rem;
+      padding: 3.5rem 1rem 2rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
     }
     header h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.2rem;
-      letter-spacing: 0.25em;
+      font-size: 2.4rem;
       font-weight: 800;
-      text-transform: uppercase;
       color: #ffffff;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
-    header p {
-      font-size: 0.9rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
+    header .subtitle {
+      font-size: 1.05rem;
+      color: #58a6ff;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    header .bio {
+      max-width: 850px;
+      margin: 0 auto 1.5rem;
       color: #8b949e;
-      margin-bottom: 1.8rem;
+      font-size: 0.98rem;
     }
+    .contact-bar {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .contact-bar a {
+      color: #f0f6fc;
+      text-decoration: none;
+      background: #161b22;
+      border: 1px solid #30363d;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .contact-bar a:hover {
+      border-color: #58a6ff;
+      color: #58a6ff;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 2.5rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 0.5rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .skill-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.2rem;
+    }
+    .skill-card h3 {
+      font-size: 0.95rem;
+      color: #58a6ff;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+    .skill-card p {
+      font-size: 0.88rem;
+      color: #8b949e;
+    }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .subject-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.3rem;
+    }
+    .subject-card h3 {
+      font-size: 1.05rem;
+      color: #f0f6fc;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .subject-card ul {
+      list-style: none;
+    }
+    .subject-card li {
+      font-size: 0.86rem;
+      color: #8b949e;
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .subject-card li::before {
+      content: "•";
+      color: #58a6ff;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    .subject-card li strong {
+      color: #c9d1d9;
+    }
+
     nav.nav-bar {
       display: flex;
       justify-content: center;
-      gap: 1.8rem;
+      gap: 1rem;
       flex-wrap: wrap;
+      margin: 1.5rem 0;
     }
     nav.nav-bar button {
-      background: none;
-      border: none;
-      font-family: 'Montserrat', sans-serif;
+      background: #161b22;
+      border: 1px solid #30363d;
       color: #8b949e;
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       cursor: pointer;
-      padding-bottom: 0.3rem;
-      border-bottom: 2px solid transparent;
-      transition: all 0.25s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      transition: all 0.2s ease;
     }
     nav.nav-bar button:hover,
     nav.nav-bar button.active {
-      color: #ffffff;
+      background: #58a6ff;
+      color: #0d1117;
       border-color: #58a6ff;
     }
+
     .gallery-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 3px;
-      padding: 3px;
+      gap: 4px;
       background-color: #161b22;
-      max-width: 1600px;
-      margin: 0 auto;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 3rem;
     }
     @media (max-width: 1024px) {
-      .gallery-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .gallery-container { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 650px) {
-      .gallery-container {
-        grid-template-columns: 1fr;
-      }
+      .gallery-container { grid-template-columns: 1fr; }
+      .subjects-grid { grid-template-columns: 1fr; }
     }
+
     .gallery-item {
       position: relative;
-      height: 480px;
+      height: 440px;
       overflow: hidden;
       background-color: #1a222d;
       cursor: pointer;
@@ -91,19 +201,17 @@
     .item-bg {
       width: 100%;
       height: 100%;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
-      filter: brightness(0.75) contrast(1.1);
+      transition: transform 0.4s ease, filter 0.3s ease;
+      filter: brightness(0.7);
     }
     .gallery-item:hover .item-bg {
-      transform: scale(1.06);
+      transform: scale(1.05);
       filter: brightness(0.25) blur(2px);
     }
+
     .bg-vpn {
-      background: radial-gradient(circle at center, rgba(30, 58, 138, 0.8), #0b1120),
-                  radial-gradient(circle at 80% 20%, #3b82f6 0%, transparent 40%),
-                  repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 14px);
+      background: radial-gradient(circle at center, rgba(30, 58, 138, 0.85), #0b1120),
+                  repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, transparent 2px, transparent 12px);
     }
     .bg-mitm {
       background: radial-gradient(circle at center, rgba(88, 28, 135, 0.85), #0f172a),
@@ -118,132 +226,189 @@
                   repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, transparent 1px, transparent 40px);
     }
     .bg-cisco {
-      background: radial-gradient(circle at center, rgba(14, 116, 144, 0.85), #083344),
-                  radial-gradient(circle at 75% 75%, #06b6d4 0%, transparent 50%);
+      background: radial-gradient(circle at center, rgba(14, 116, 144, 0.85), #083344);
     }
     .bg-ia {
-      background: radial-gradient(circle at center, rgba(131, 24, 67, 0.85), #4c0519),
-                  repeating-linear-gradient(135deg, rgba(244, 63, 94, 0.07) 0px, transparent 2px, transparent 8px);
+      background: radial-gradient(circle at center, rgba(131, 24, 67, 0.85), #4c0519);
     }
+
     .visible-title {
       position: absolute;
       bottom: 1.5rem;
       left: 1.5rem;
       right: 1.5rem;
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       color: #ffffff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      text-transform: uppercase;
+      transition: opacity 0.3s ease;
       pointer-events: none;
     }
     .gallery-item:hover .visible-title {
       opacity: 0;
-      transform: translateY(10px);
     }
+
     .overlay-info {
       position: absolute;
       inset: 0;
-      padding: 2.5rem 2rem;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       opacity: 0;
-      transform: translateY(15px);
-      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      transition: opacity 0.3s ease;
     }
     .gallery-item:hover .overlay-info {
       opacity: 1;
-      transform: translateY(0);
     }
     .overlay-info .category-tag {
-      font-family: 'Montserrat', sans-serif;
       font-size: 0.72rem;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: #58a6ff;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       font-weight: 600;
     }
     .overlay-info h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 700;
+      font-size: 1.25rem;
       color: #ffffff;
-      margin-bottom: 0.9rem;
-      line-height: 1.3;
+      margin-bottom: 0.8rem;
     }
     .overlay-info p {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: #c9d1d9;
-      line-height: 1.55;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.2rem;
     }
     .tech-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.4rem;
     }
     .tech-tags span {
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
       font-size: 0.72rem;
-      padding: 0.2rem 0.55rem;
+      padding: 0.2rem 0.5rem;
       border-radius: 3px;
-      letter-spacing: 0.04em;
     }
     .overlay-info a.action-btn {
       display: inline-block;
       align-self: flex-start;
-      font-family: 'Montserrat', sans-serif;
       font-size: 0.75rem;
-      letter-spacing: 0.15em;
       text-transform: uppercase;
       font-weight: 700;
       color: #0d1117;
       background: #58a6ff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 3px;
+      padding: 0.55rem 1.1rem;
+      border-radius: 4px;
       text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease;
     }
     .overlay-info a.action-btn:hover {
       background: #ffffff;
-      transform: translateY(-2px);
     }
+
     footer {
       text-align: center;
-      padding: 3rem 1.5rem;
+      padding: 2.5rem 1rem 1rem;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      margin-top: 2rem;
-    }
-    footer .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-    footer a {
-      color: #58a6ff;
-      text-decoration: none;
       font-size: 0.85rem;
-      letter-spacing: 0.08em;
-    }
-    footer a:hover {
-      text-decoration: underline;
+      color: #8b949e;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>ÁNGEL LEAL DELGADO</h1>
-    <p>ASIR &bull; INFRAESTRUCTURA DE REDES &bull; CIBERSEGURIDAD</p>
+  <div class="wrapper">
+    <header>
+      <h1>¡Hola! Soy Ángel Leal Delgado 👋</h1>
+      <p class="subtitle">Técnico SMR &bull; Estudiante de 2.º año ASIR en DIGITECH (Madrid)</p>
+      <div class="bio">
+        En búsqueda activa de prácticas de empresa / FCT. Perfil técnico enfocado en la administración de sistemas (Linux / Windows Server), redes, ciberseguridad y virtualización, con experiencia en soporte técnico y diagnóstico hardware/software.
+      </div>
+      <div class="contact-bar">
+        <a href="mailto:angellealdo.1@gmail.com">✉️ angellealdo.1@gmail.com</a>
+        <a href="tel:634686594">📞 634 68 65 94</a>
+        <a href="https://github.com/angellealdigitech-design" target="_blank">💻 Perfil GitHub</a>
+      </div>
+    </header>
+
+    <h2 class="section-title">🛠️ Habilidades Técnicas</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Sistemas Operativos</h3>
+        <p>Linux (Debian, Ubuntu Server) por CLI, Windows Server (Active Directory, GPOs, DNS, DHCP, permisos NTFS).</p>
+      </div>
+      <div class="skill-card">
+        <h3>Redes y Comunicaciones</h3>
+        <p>TCP/IP, IPv4/IPv6, subnetting VLSM, VLANs, enrutamiento estático/dinámico, Cisco Packet Tracer, Wireshark.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Seguridad & Almacenamiento</h3>
+        <p>Listas de Control de Acceso (ACLs), VPNs, cortafuegos (iptables, UFW), bastionado, niveles RAID y backups.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Servicios de Red & Web</h3>
+        <p>SSH, Apache, Nginx, FTP/SFTP, Samba, pilas LAMP y virtualización con VMware, VirtualBox y contenedores.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">📚 Competencias y Proyectos por Asignaturas (ASIR)</h2>
+    <div class="subjects-grid">
+      <div class="subject-card">
+        <h3>🌐 Planificación y Administración de Redes</h3>
+        <ul>
+          <li><strong>Topologías LAN/WAN:</strong> Diseño jerárquico sobre Cisco Packet Tracer con subnetting VLSM en IPv4 e IPv6.</li>
+          <li><strong>Switching:</strong> Segmentación por VLANs, enlaces troncales (802.1Q) y routing inter-VLAN.</li>
+          <li><strong>Enrutamiento:</strong> Configuración de tablas estáticas, rutas por políticas y protocolos dinámicos.</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <h3>🛡️ Seguridad y Alta Disponibilidad</h3>
+        <ul>
+          <li><strong>Seguridad Perimetral:</strong> Despliegue de túneles VPN y filtrado con ACLs estándar y extendidas.</li>
+          <li><strong>Auditoría & MITM:</strong> Laboratorios de análisis de ARP Spoofing con Kali Linux, arpspoof y Wireshark.</li>
+          <li><strong>Alta Disponibilidad:</strong> Niveles RAID, políticas de copias de seguridad y bastionado de sistemas.</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <h3>🖥️ Administración de Sistemas Operativos</h3>
+        <ul>
+          <li><strong>Linux Server:</strong> Gestión por consola, permisos avanzados, LVM y automatización con Bash y cronjobs.</li>
+          <li><strong>Windows Server:</strong> Despliegue de Active Directory DS, Unidades Organizativas y directivas GPO.</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <h3>🌍 Servicios de Red e Internet</h3>
+        <ul>
+          <li><strong>Infraestructura:</strong> Servidores DHCP (concesiones, reservas) y resolución de nombres DNS.</li>
+          <li><strong>Servicios Seguros:</strong> Despliegue de servidores web Apache/Nginx, FTP/SFTP y acceso remoto por SSH.</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <h3>🗄️ Gestión de Bases de Datos</h3>
+        <ul>
+          <li><strong>Diseño:</strong> Modelado relacional, normalización e integridad referencial.</li>
+          <li><strong>MySQL / MariaDB:</strong> Consultas SQL (DDL, DML), permisos de usuario y políticas de backup/restore.</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <h3>☁️ Implantación de Aplicaciones Web</h3>
+        <ul>
+          <li><strong>Pilas Web:</strong> Despliegue de arquitecturas LAMP (Linux, Apache, MySQL, PHP).</li>
+          <li><strong>Gestores CMS:</strong> Puesta en marcha de aplicaciones web, configuración y soporte de front-end.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">🖼️ Galería Visual e Interactiva de Proyectos</h2>
+
     <nav class="nav-bar">
       <button class="active" onclick="filterGallery('all')">Todos</button>
       <button onclick="filterGallery('redes')">Redes & Routing</button>
@@ -251,121 +416,111 @@
       <button onclick="filterGallery('sistemas')">Sistemas</button>
       <button onclick="filterGallery('certificaciones')">Acreditaciones</button>
     </nav>
-  </header>
 
-  <main class="gallery-container" id="gallery">
+    <main class="gallery-container" id="gallery">
 
-    <article class="gallery-item" data-category="seguridad redes">
-      <div class="item-bg bg-vpn"></div>
-      <div class="visible-title">Despliegue VPN & ACLs</div>
-      <div class="overlay-info">
-        <span class="category-tag">Ciberseguridad / Redes</span>
-        <h2>VPN & Filtrado por ACLs</h2>
-        <p>Túneles de comunicación segura entre sedes con listas de control de acceso para segmentación y bloqueo de paquetes no autorizados.</p>
-        <div class="tech-tags">
-          <span>Packet Tracer</span>
-          <span>Cisco IOS</span>
-          <span>ACL Extendidas</span>
-          <span>VPN</span>
+      <article class="gallery-item" data-category="seguridad redes">
+        <div class="item-bg bg-vpn"></div>
+        <div class="visible-title">Despliegue VPN & ACLs</div>
+        <div class="overlay-info">
+          <span class="category-tag">Ciberseguridad / Redes</span>
+          <h2>VPN & Filtrado por ACLs</h2>
+          <p>Túneles seguros entre sedes con listas de control de acceso para segmentación y bloqueo de paquetes no autorizados.</p>
+          <div class="tech-tags">
+            <span>Packet Tracer</span>
+            <span>Cisco IOS</span>
+            <span>ACLs</span>
+            <span>VPN</span>
+          </div>
+          <a href="VPN-LISTAS DE CONTROL DE ACCESO_ANGEL_LEAL (2).pkt" download class="action-btn">Descargar .PKT</a>
         </div>
-        <a href="VPN-LISTAS DE CONTROL DE ACCESO_ANGEL_LEAL (2).pkt" download class="action-btn">Descargar .PKT</a>
-      </div>
-    </article>
+      </article>
 
-    <article class="gallery-item" data-category="seguridad">
-      <div class="item-bg bg-mitm"></div>
-      <div class="visible-title">Laboratorio MITM & ARP Spoofing</div>
-      <div class="overlay-info">
-        <span class="category-tag">Seguridad y Hardening</span>
-        <h2>Ataque MITM en Red Local</h2>
-        <p>Práctica controlada entre máquina atacante (Kali Linux) y víctima (Windows 10) analizando la interceptación con arpspoof y Wireshark.</p>
-        <div class="tech-tags">
-          <span>Kali Linux</span>
-          <span>Wireshark</span>
-          <span>arpspoof</span>
-          <span>IP Forwarding</span>
+      <article class="gallery-item" data-category="seguridad">
+        <div class="item-bg bg-mitm"></div>
+        <div class="visible-title">Laboratorio MITM & ARP Spoofing</div>
+        <div class="overlay-info">
+          <span class="category-tag">Seguridad</span>
+          <h2>Ataque MITM en Red Local</h2>
+          <p>Práctica controlada entre máquina atacante (Kali Linux) y víctima (Windows 10) analizando la interceptación con arpspoof y Wireshark.</p>
+          <div class="tech-tags">
+            <span>Kali Linux</span>
+            <span>Wireshark</span>
+            <span>arpspoof</span>
+          </div>
+          <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Detalles</a>
         </div>
-        <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Documentación</a>
-      </div>
-    </article>
+      </article>
 
-    <article class="gallery-item" data-category="redes">
-      <div class="item-bg bg-wan"></div>
-      <div class="visible-title">Topología WAN Multi-Nodo</div>
-      <div class="overlay-info">
-        <span class="category-tag">Planificación de Redes</span>
-        <h2>Routing WAN por Políticas</h2>
-        <p>Interconexión con 3 routers en enlaces serie /8 y subredes LAN /16 y /24 con políticas de control de tráfico (PBR) y Catalyst 2960.</p>
-        <div class="tech-tags">
-          <span>Catalyst 2960</span>
-          <span>IPv4 / VLSM</span>
-          <span>Policy Routing</span>
-          <span>VLANs</span>
+      <article class="gallery-item" data-category="redes">
+        <div class="item-bg bg-wan"></div>
+        <div class="visible-title">Topología WAN Multi-Nodo</div>
+        <div class="overlay-info">
+          <span class="category-tag">Redes</span>
+          <h2>Routing WAN por Políticas</h2>
+          <p>Interconexión con routers Cisco en enlaces serie clase A y subredes LAN con control por políticas (PBR) y switches Catalyst 2960.</p>
+          <div class="tech-tags">
+            <span>Cisco IOS</span>
+            <span>PBR</span>
+            <span>Catalyst 2960</span>
+          </div>
+          <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Topología</a>
         </div>
-        <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Topología</a>
-      </div>
-    </article>
+      </article>
 
-    <article class="gallery-item" data-category="sistemas">
-      <div class="item-bg bg-sys"></div>
-      <div class="visible-title">Windows Server & Linux CLI</div>
-      <div class="overlay-info">
-        <span class="category-tag">Administración de Sistemas</span>
-        <h2>Directorio Activo & Linux Server</h2>
-        <p>Gestión de controladores de dominio (GPOs, OUs, permisos NTFS) en Windows Server y administración CLI, LVM y automatización Bash en Debian/Ubuntu.</p>
-        <div class="tech-tags">
-          <span>Active Directory</span>
-          <span>Ubuntu Server</span>
-          <span>Bash Scripting</span>
-          <span>DHCP/DNS</span>
+      <article class="gallery-item" data-category="sistemas">
+        <div class="item-bg bg-sys"></div>
+        <div class="visible-title">Windows Server & Linux CLI</div>
+        <div class="overlay-info">
+          <span class="category-tag">Sistemas Operativos</span>
+          <h2>Directorio Activo & Linux</h2>
+          <p>Administración de controladores de dominio (GPOs, OUs) en Windows Server y administración CLI, LVM y Bash en Debian/Ubuntu.</p>
+          <div class="tech-tags">
+            <span>Active Directory</span>
+            <span>Ubuntu Server</span>
+            <span>Bash</span>
+          </div>
+          <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Detalles</a>
         </div>
-        <a href="https://github.com/angellealdigitech-design" class="action-btn">Detalles</a>
-      </div>
-    </article>
+      </article>
 
-    <article class="gallery-item" data-category="certificaciones redes seguridad">
-      <div class="item-bg bg-cisco"></div>
-      <div class="visible-title">Acreditaciones Cisco NetAcad</div>
-      <div class="overlay-info">
-        <span class="category-tag">Certificaciones Oficiales</span>
-        <h2>Cisco Networking Academy</h2>
-        <p>Credenciales verificadas en Ethical Hacker, Endpoint Security, Network Defense, Conceptos Básicos de Redes y Cisco Packet Tracer.</p>
-        <div class="tech-tags">
-          <span>Ethical Hacker</span>
-          <span>Endpoint Security</span>
-          <span>Network Defense</span>
-          <span>IoT</span>
+      <article class="gallery-item" data-category="certificaciones redes seguridad">
+        <div class="item-bg bg-cisco"></div>
+        <div class="visible-title">Acreditaciones Cisco NetAcad</div>
+        <div class="overlay-info">
+          <span class="category-tag">Certificaciones</span>
+          <h2>Cisco Networking Academy</h2>
+          <p>Acreditaciones oficiales en Ethical Hacker, Endpoint Security, Network Defense, Conceptos Básicos de Redes e Introducción a Packet Tracer.</p>
+          <div class="tech-tags">
+            <span>Ethical Hacker</span>
+            <span>Endpoint Security</span>
+            <span>NetAcad</span>
+          </div>
+          <a href="https://github.com/angellealdigitech-design" class="action-btn">Credenciales</a>
         </div>
-        <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Credenciales</a>
-      </div>
-    </article>
+      </article>
 
-    <article class="gallery-item" data-category="certificaciones">
-      <div class="item-bg bg-ia"></div>
-      <div class="visible-title">Inteligencia Artificial & Automatización</div>
-      <div class="overlay-info">
-        <span class="category-tag">Formación Continua</span>
-        <h2>Agentes de IA & Automatización</h2>
-        <p>Capacitación técnica en implementación de agentes inteligentes, optimización de tareas operativas y herramientas generativas en BIG School.</p>
-        <div class="tech-tags">
-          <span>Agentes IA</span>
-          <span>Automatización</span>
-          <span>Productividad</span>
+      <article class="gallery-item" data-category="certificaciones">
+        <div class="item-bg bg-ia"></div>
+        <div class="visible-title">Inteligencia Artificial & Automatización</div>
+        <div class="overlay-info">
+          <span class="category-tag">Formación Continua</span>
+          <h2>Agentes IA & Automatización</h2>
+          <p>Certificación en desarrollo y despliegue de agentes inteligentes, optimización de tareas operativas y herramientas generativas en BIG School.</p>
+          <div class="tech-tags">
+            <span>Agentes IA</span>
+            <span>Automatización</span>
+          </div>
+          <a href="https://github.com/angellealdigitech-design" class="action-btn">Certificado</a>
         </div>
-        <a href="https://github.com/angellealdigitech-design" class="action-btn">Certificado IA</a>
-      </div>
-    </article>
+      </article>
 
-  </main>
+    </main>
 
-  <footer>
-    <p>Ángel Leal Delgado &bull; Técnico en Sistemas Microinformáticos y Redes &bull; Estudiante ASIR</p>
-    <div class="contact-links">
-      <a href="mailto:angellealdo.1@gmail.com">angellealdo.1@gmail.com</a>
-      <a href="tel:634686594">+34 634 68 65 94</a>
-      <a href="https://github.com/angellealdigitech-design" target="_blank">Perfil GitHub</a>
-    </div>
-  </footer>
+    <footer>
+      <p>Ángel Leal Delgado &bull; Técnico en Sistemas Microinformáticos y Redes &bull; Estudiante ASIR</p>
+    </footer>
+  </div>
 
   <script>
     function filterGallery(category) {
