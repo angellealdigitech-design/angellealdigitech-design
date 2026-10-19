@@ -3,613 +3,735 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ángel Leal Delgado | Portafolio Técnico ASIR</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Ángel Leal Delgado | Administrador de Sistemas y Redes (ASIR)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-main: #090d16;
+      --bg-card: rgba(18, 24, 38, 0.75);
+      --bg-card-hover: rgba(26, 35, 56, 0.9);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.3);
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.15);
+      --accent: #818cf8;
+      --success: #34d399;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.6;
-      padding: 0 1rem 3rem;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(129, 140, 248, 0.08) 0%, transparent 45%);
+      background-attachment: fixed;
+      padding: 0 1.2rem 4rem;
     }
-    .wrapper {
-      max-width: 1200px;
+
+    .container {
+      max-width: 1140px;
       margin: 0 auto;
     }
-    header {
-      padding: 3.5rem 1rem 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* HEADER HERO */
+    header.hero {
+      padding: 4rem 1rem 3rem;
       text-align: center;
+      position: relative;
     }
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-    }
-    header .subtitle {
-      font-size: 1.05rem;
-      color: #58a6ff;
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(52, 211, 153, 0.1);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      color: var(--success);
+      font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 1rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.02em;
     }
-    header .bio {
-      max-width: 850px;
-      margin: 0 auto 1.5rem;
-      color: #8b949e;
-      font-size: 0.98rem;
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--success);
+      animation: pulse 2s infinite;
     }
-    .contact-bar {
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.9); }
+    }
+
+    header.hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.8rem;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .bio {
+      max-width: 750px;
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .contact-nav {
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
     }
-    .contact-bar a {
-      color: #f0f6fc;
-      text-decoration: none;
-      background: #161b22;
-      border: 1px solid #30363d;
-      padding: 0.45rem 1rem;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-    .contact-bar a:hover {
-      border-color: #58a6ff;
-      color: #58a6ff;
-    }
-    .section-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 2.5rem 0 1.2rem;
-      display: flex;
+
+    .contact-pill {
+      display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 0.5rem;
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .skill-card {
-      background: #161b22;
-      border: 1px solid #30363d;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 0.55rem 1.1rem;
       border-radius: 8px;
-      padding: 1.2rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
     }
-    .skill-card h3 {
-      font-size: 0.95rem;
-      color: #58a6ff;
-      margin-bottom: 0.4rem;
+
+    .contact-pill:hover {
+      border-color: var(--primary);
+      background: var(--bg-card-hover);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px var(--primary-glow);
+    }
+
+    /* QUICK METRICS */
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2.5rem 0 3.5rem;
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .metric-card span.num {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .metric-card span.label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       font-weight: 600;
     }
-    .skill-card p {
-      font-size: 0.88rem;
-      color: #8b949e;
+
+    /* TITULOS DE SECCIÓN */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 3.5rem 0 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
     }
-    .subjects-grid {
+
+    .section-header h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--primary);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    /* HABILIDADES GRID */
+    .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.2rem;
-      margin-bottom: 2.5rem;
     }
-    .subject-card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 8px;
-      padding: 1.3rem;
+
+    .skill-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
     }
-    .subject-card h3 {
+
+    .skill-box:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .skill-box h3 {
       font-size: 1.05rem;
-      color: #f0f6fc;
-      margin-bottom: 0.6rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    .subject-card ul {
-      list-style: none;
+
+    .skill-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
-    .subject-card li {
-      font-size: 0.86rem;
-      color: #8b949e;
-      margin-bottom: 0.5rem;
-      padding-left: 1rem;
-      position: relative;
-    }
-    .subject-card li::before {
-      content: "•";
-      color: #58a6ff;
-      position: absolute;
-      left: 0;
-      font-weight: bold;
-    }
-    .subject-card li strong {
-      color: #c9d1d9;
-    }
-    nav.nav-bar {
-      display: flex;
-      justify-content: center;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-      margin: 1.5rem 0;
-    }
-    nav.nav-bar button {
-      background: #161b22;
-      border: 1px solid #30363d;
-      color: #8b949e;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    nav.nav-bar button:hover,
-    nav.nav-bar button.active {
-      background: #58a6ff;
-      color: #0d1117;
-      border-color: #58a6ff;
-    }
-    .gallery-container {
+
+    /* COMPETENCIAS ASIR */
+    .subjects-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      background-color: #161b22;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 1.2rem;
     }
-    @media (max-width: 1024px) {
-      .gallery-container { grid-template-columns: repeat(2, 1fr); }
+
+    .subject-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+      backdrop-filter: blur(10px);
     }
-    @media (max-width: 650px) {
-      .gallery-container { grid-template-columns: 1fr; }
-      .subjects-grid { grid-template-columns: 1fr; }
-    }
-    .gallery-item {
-      position: relative;
-      height: 440px;
-      overflow: hidden;
-      background-color: #1a222d;
-    }
-    .item-bg {
-      width: 100%;
-      height: 100%;
-      transition: transform 0.4s ease, filter 0.3s ease;
-      filter: brightness(0.7);
-    }
-    .gallery-item:hover .item-bg {
-      transform: scale(1.05);
-      filter: brightness(0.2) blur(3px);
-    }
-    .bg-vpn {
-      background: radial-gradient(circle at center, rgba(30, 58, 138, 0.85), #0b1120),
-                  repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, transparent 2px, transparent 12px);
-    }
-    .bg-mitm {
-      background: radial-gradient(circle at center, rgba(88, 28, 135, 0.85), #0f172a),
-                  repeating-linear-gradient(0deg, rgba(168, 85, 247, 0.08) 0px, transparent 2px, transparent 6px);
-    }
-    .bg-wan {
-      background: radial-gradient(circle at center, rgba(6, 78, 59, 0.85), #022c22),
-                  radial-gradient(circle at 20% 80%, #10b981 0%, transparent 45%);
-    }
-    .bg-sys {
-      background: radial-gradient(circle at center, rgba(30, 41, 59, 0.9), #030712),
-                  repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, transparent 1px, transparent 40px);
-    }
-    .bg-ethical {
-      background: radial-gradient(circle at center, rgba(14, 116, 144, 0.9), #083344);
-    }
-    .bg-endpoint {
-      background: radial-gradient(circle at center, rgba(3, 105, 161, 0.9), #0c4a6e);
-    }
-    .bg-cyber {
-      background: radial-gradient(circle at center, rgba(21, 128, 61, 0.9), #052e16);
-    }
-    .bg-packet {
-      background: radial-gradient(circle at center, rgba(109, 40, 217, 0.9), #2e1065);
-    }
-    .bg-ia {
-      background: radial-gradient(circle at center, rgba(190, 24, 93, 0.9), #4c0519);
-    }
-    .bg-green {
-      background: radial-gradient(circle at center, rgba(4, 120, 87, 0.9), #022c22);
-    }
-    .visible-title {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 1.5rem;
-      right: 1.5rem;
-      font-family: 'Montserrat', sans-serif;
+
+    .subject-card h3 {
       font-size: 1.05rem;
       font-weight: 700;
+      margin-bottom: 0.8rem;
       color: #ffffff;
-      text-transform: uppercase;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
     }
-    .gallery-item:hover .visible-title {
-      opacity: 0;
-    }
-    .overlay-info {
-      position: absolute;
-      inset: 0;
-      padding: 1.8rem;
+
+    .subject-card ul {
+      list-style: none;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      overflow-y: auto;
+      gap: 0.65rem;
     }
-    .gallery-item:hover .overlay-info {
+
+    .subject-card li {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .subject-card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    .subject-card li strong {
+      color: #e2e8f0;
+    }
+
+    /* FILTROS GALERÍA */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin: 1.8rem 0;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      color: #090d16;
+      border-color: var(--primary);
+      box-shadow: 0 2px 10px var(--primary-glow);
+    }
+
+    /* GALERÍA CARDS */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      opacity: 0.4;
+      transition: opacity 0.25s;
+    }
+
+    .cert-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .cert-card:hover::before {
       opacity: 1;
     }
-    .overlay-info .category-tag {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #58a6ff;
-      margin-bottom: 0.4rem;
-      font-weight: 600;
+
+    .card-top {
+      margin-bottom: 1.2rem;
     }
-    .overlay-info h2 {
-      font-size: 1.2rem;
+
+    .issuer {
+      font-size: 0.72rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .cert-card h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
       color: #ffffff;
       margin-bottom: 0.6rem;
+      line-height: 1.35;
     }
-    .overlay-info p {
-      font-size: 0.84rem;
-      color: #c9d1d9;
-      margin-bottom: 1rem;
+
+    .cert-card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
-    .tech-tags {
+
+    .tech-chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-bottom: 1.1rem;
-    }
-    .tech-tags span {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      font-size: 0.7rem;
-      padding: 0.15rem 0.45rem;
-      border-radius: 3px;
-    }
-    .overlay-info .btn-group {
-      display: flex;
-      flex-direction: column;
       gap: 0.4rem;
+      margin: 1.1rem 0 1.4rem;
     }
-    .overlay-info a.action-btn {
-      display: inline-block;
+
+    .tech-chips span {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
       font-size: 0.72rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: #0d1117;
-      background: #58a6ff;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      text-decoration: none;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .btn-actions {
+      display: flex;
+      gap: 0.6rem;
+      flex-direction: column;
+    }
+
+    .primary-btn {
+      display: block;
       text-align: center;
-      transition: background 0.2s;
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      transition: all 0.2s ease;
     }
-    .overlay-info a.action-btn:hover {
-      background: #ffffff;
+
+    .primary-btn:hover {
+      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+      color: #090d16;
+      box-shadow: 0 4px 15px var(--primary-glow);
     }
+
+    .secondary-btn {
+      display: block;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.04);
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .secondary-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 2.5rem 1rem 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.85rem;
-      color: #8b949e;
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.84rem;
+      color: #64748b;
     }
   </style>
 </head>
 <body>
 
-  <div class="wrapper">
-    <header>
-      <h1>¡Hola! Soy Ángel Leal Delgado 👋</h1>
-      <p class="subtitle">Técnico SMR &bull; Estudiante de 2.º año ASIR en DIGITECH (Madrid)</p>
-      <div class="bio">
-        En búsqueda activa de prácticas de empresa / FCT. Perfil técnico enfocado en la administración de sistemas (Linux / Windows Server), redes, ciberseguridad y virtualización, con experiencia en soporte técnico y diagnóstico hardware/software.
+  <div class="container">
+    <header class="hero">
+      <div class="status-badge">
+        <span class="status-dot"></span> Disponible para FCT / Prácticas
       </div>
-      <div class="contact-bar">
-        <a href="mailto:angellealdo.1@gmail.com">✉️ angellealdo.1@gmail.com</a>
-        <a href="tel:634686594">📞 634 68 65 94</a>
-        <a href="https://github.com/angellealdigitech-design" target="_blank">💻 Perfil GitHub</a>
+      <h1>Ángel Leal Delgado</h1>
+      <div class="subtitle">Técnico SMR &bull; Estudiante de 2.º año ASIR en DIGITECH (Madrid)</div>
+      <p class="bio">
+        En búsqueda activa de prácticas curriculares. Especializado en administración de sistemas (Linux y Windows Server), diseño e implementación de redes seguras, ciberseguridad perimetral y virtualización de servicios.
+      </p>
+      
+      <div class="contact-nav">
+        <a href="mailto:angellealdo.1@gmail.com" class="contact-pill">✉️ angellealdo.1@gmail.com</a>
+        <a href="tel:634686594" class="contact-pill">📞 634 68 65 94</a>
+        <a href="https://github.com/angellealdigitech-design" target="_blank" class="contact-pill">💻 GitHub</a>
       </div>
     </header>
 
-    <h2 class="section-title">🛠️ Habilidades Técnicas</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Sistemas Operativos</h3>
-        <p>Linux (Debian, Ubuntu Server) por CLI, Windows Server (Active Directory, GPOs, DNS, DHCP, permisos NTFS).</p>
+    <!-- METRICAS RESUMEN -->
+    <div class="metrics-bar">
+      <div class="metric-card">
+        <span class="num">2.º ASIR</span>
+        <span class="label">Ciclo Superior Activo</span>
       </div>
-      <div class="skill-card">
-        <h3>Redes y Comunicaciones</h3>
-        <p>TCP/IP, IPv4/IPv6, subnetting VLSM, VLANs, enrutamiento estático/dinámico, Cisco Packet Tracer, Wireshark.</p>
+      <div class="metric-card">
+        <span class="num">SMR</span>
+        <span class="label">Técnico Oficial</span>
       </div>
-      <div class="skill-card">
-        <h3>Seguridad & Almacenamiento</h3>
-        <p>Listas de Control de Acceso (ACLs), VPNs, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad.</p>
+      <div class="metric-card">
+        <span class="num">Cisco NetAcad</span>
+        <span class="label">4 Credenciales Verificadas</span>
       </div>
-      <div class="skill-card">
-        <h3>Servicios de Red & Web</h3>
-        <p>SSH, Apache, Nginx, FTP/SFTP, Samba, pilas LAMP y virtualización con VMware, VirtualBox y contenedores.</p>
+      <div class="metric-card">
+        <span class="num">BIG School</span>
+        <span class="label">Especialización en IA</span>
       </div>
     </div>
 
-    <h2 class="section-title">📚 Competencias y Proyectos por Asignaturas (ASIR)</h2>
+    <!-- HABILIDADES -->
+    <div class="section-header">
+      <h2>Habilidades Técnicas</h2>
+      <span class="tag">STACK</span>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h3>🐧 Sistemas Operativos</h3>
+        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS.</p>
+      </div>
+      <div class="skill-box">
+        <h3>🌐 Redes & Routing</h3>
+        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark.</p>
+      </div>
+      <div class="skill-box">
+        <h3>🛡️ Ciberseguridad</h3>
+        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad.</p>
+      </div>
+      <div class="skill-box">
+        <h3>⚡ Servicios e Infraestructura</h3>
+        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, arquitecturas LAMP y entornos virtualizados en VMware, VirtualBox y contenedores.</p>
+      </div>
+    </div>
+
+    <!-- ASIGNATURAS Y PROYECTOS -->
+    <div class="section-header">
+      <h2>Competencias Aplicadas en ASIR</h2>
+      <span class="tag">FORMACIÓN</span>
+    </div>
+
     <div class="subjects-grid">
       <div class="subject-card">
         <h3>🌐 Planificación y Administración de Redes</h3>
         <ul>
-          <li><strong>Topologías LAN/WAN:</strong> Diseño jerárquico sobre Cisco Packet Tracer con subnetting VLSM en IPv4 e IPv6.</li>
-          <li><strong>Switching:</strong> Segmentación por VLANs, enlaces troncales (802.1Q) y routing inter-VLAN.</li>
-          <li><strong>Enrutamiento:</strong> Configuración de tablas estáticas, rutas por políticas y protocolos dinámicos.</li>
+          <li><strong>Topologías LAN/WAN:</strong> Diseño sobre Packet Tracer con cálculo VLSM en IPv4 e IPv6.</li>
+          <li><strong>Switching Avanzado:</strong> Segmentación por VLANs, enlaces troncales y enrutamiento inter-VLAN.</li>
+          <li><strong>Enrutamiento:</strong> Tablas estáticas, rutas por políticas (PBR) y protocolos dinámicos.</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>🛡️ Seguridad y Alta Disponibilidad</h3>
         <ul>
-          <li><strong>Seguridad Perimetral:</strong> Despliegue de túneles VPN y filtrado con ACLs estándar y extendidas.</li>
-          <li><strong>Auditoría & MITM:</strong> Laboratorios de análisis de ARP Spoofing con Kali Linux, arpspoof y Wireshark.</li>
-          <li><strong>Alta Disponibilidad:</strong> Niveles RAID, políticas de copias de seguridad y bastionado de sistemas.</li>
+          <li><strong>Seguridad Perimetral:</strong> Despliegue de túneles VPN y filtrado exhaustivo por ACLs.</li>
+          <li><strong>Auditoría de Red:</strong> Monitorización de paquetes, diagnóstico de anomalías e inspección de tráfico.</li>
+          <li><strong>Continuidad de Negocio:</strong> Configuraciones RAID, políticas de backup y tolerancia a fallos.</li>
         </ul>
       </div>
 
       <div class="subject-card">
-        <h3>🖥️ Administración de Sistemas Operativos</h3>
+        <h3>🖥️ Administración de Sistemas</h3>
         <ul>
-          <li><strong>Linux Server:</strong> Gestión por consola, permisos avanzados, LVM y automatización con Bash y cronjobs.</li>
-          <li><strong>Windows Server:</strong> Despliegue de Active Directory DS, Unidades Organizativas y directivas GPO.</li>
+          <li><strong>Linux Server:</strong> Permisos avanzados, gestión de almacenamiento LVM y scripts en Bash.</li>
+          <li><strong>Windows Server:</strong> Despliegue de dominio Active Directory, estructura OUs y directivas GPO.</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>🌍 Servicios de Red e Internet</h3>
         <ul>
-          <li><strong>Infraestructura:</strong> Servidores DHCP (concesiones, reservas) y resolución de nombres DNS.</li>
-          <li><strong>Servicios Seguros:</strong> Despliegue de servidores web Apache/Nginx, FTP/SFTP y acceso remoto por SSH.</li>
+          <li><strong>Infraestructura Base:</strong> Servidores DHCP con reservas y resolución de nombres DNS Bind9.</li>
+          <li><strong>Servidores Seguros:</strong> Configuración y hardening de servidores Web (Apache/Nginx) y SSH.</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>🗄️ Gestión de Bases de Datos</h3>
         <ul>
-          <li><strong>Diseño:</strong> Modelado relacional, normalización e integridad referencial.</li>
-          <li><strong>MySQL / MariaDB:</strong> Consultas SQL (DDL, DML), permisos de usuario y políticas de backup/restore.</li>
+          <li><strong>Modelado Relacional:</strong> Normalización, integridad referencial y diagramas E/R.</li>
+          <li><strong>MySQL / MariaDB:</strong> Consultas complejas DDL/DML, gestión de privilegios y backups periódicos.</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>☁️ Implantación de Aplicaciones Web</h3>
         <ul>
-          <li><strong>Pilas Web:</strong> Despliegue de arquitecturas LAMP (Linux, Apache, MySQL, PHP).</li>
-          <li><strong>Gestores CMS:</strong> Puesta en marcha de aplicaciones web, configuración y soporte de front-end.</li>
+          <li><strong>Pilas LAMP:</strong> Puesta en marcha de entornos Linux + Apache + MariaDB + PHP.</li>
+          <li><strong>Sistemas CMS:</strong> Instalación de gestores de contenidos y resolución de incidencias web.</li>
         </ul>
       </div>
     </div>
 
-    <h2 class="section-title">🖼️ Galería Visual, Proyectos y Certificados</h2>
+    <!-- CERTIFICADOS & PROYECTOS REALES -->
+    <div class="section-header">
+      <h2>Acreditaciones Oficiales y Proyectos</h2>
+      <span class="tag">VERIFICADOS</span>
+    </div>
 
-    <nav class="nav-bar">
-      <button class="active" onclick="filterGallery('all')">Todos</button>
-      <button onclick="filterGallery('certificaciones')">Acreditaciones Cisco & IA</button>
-      <button onclick="filterGallery('seguridad')">Ciberseguridad</button>
-      <button onclick="filterGallery('redes')">Redes & Routing</button>
-      <button onclick="filterGallery('sistemas')">Sistemas</button>
-    </nav>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterGallery('all')">Todos</button>
+      <button class="filter-btn" onclick="filterGallery('cisco')">Cisco NetAcad</button>
+      <button class="filter-btn" onclick="filterGallery('seguridad')">Ciberseguridad</button>
+      <button class="filter-btn" onclick="filterGallery('ia')">Inteligencia Artificial</button>
+      <button class="filter-btn" onclick="filterGallery('laboratorio')">Laboratorios (.PKT)</button>
+    </div>
 
-    <main class="gallery-container" id="gallery">
+    <main class="cards-grid" id="gallery">
 
-      <article class="gallery-item" data-category="certificaciones seguridad">
-        <div class="item-bg bg-ethical"></div>
-        <div class="visible-title">Cisco: Ethical Hacker</div>
-        <div class="overlay-info">
-          <span class="category-tag">Cisco Networking Academy</span>
-          <h2>Ethical Hacker</h2>
-          <p>Metodología de pentesting, escaneo de vulnerabilidades, explotación en redes cableadas/inalámbricas e informes técnicos.</p>
-          <div class="tech-tags">
+      <!-- Cisco Ethical Hacker -->
+      <article class="cert-card" data-category="cisco seguridad">
+        <div class="card-top">
+          <span class="issuer">Cisco Networking Academy</span>
+          <h3>Ethical Hacker</h3>
+          <p>Acreditación técnica en metodología de pruebas de penetración, escaneo estructurado de vulnerabilidades, explotación en redes cableadas/inalámbricas y redacción de informes técnicos.</p>
+          <div class="tech-chips">
             <span>Pentesting</span>
-            <span>Vulnerabilidades</span>
+            <span>Auditoría</span>
             <span>NetAcad</span>
           </div>
-          <a href="CERTIFICADOR/EthicalHackerUpdate20261007-20-6nl8q5.pdf" target="_blank" class="action-btn">Ver Certificado (PDF)</a>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/EthicalHackerUpdate20261007-20-6nl8q5.pdf" target="_blank" class="primary-btn">📄 Ver Certificado Oficial (PDF)</a>
         </div>
       </article>
 
-      <article class="gallery-item" data-category="certificaciones seguridad">
-        <div class="item-bg bg-endpoint"></div>
-        <div class="visible-title">Cisco: Endpoint Security</div>
-        <div class="overlay-info">
-          <span class="category-tag">Cisco Networking Academy</span>
-          <h2>Endpoint Security</h2>
-          <p>Mitigación de amenazas en red, análisis de malware mediante capturas de tráfico y protección de endpoints.</p>
-          <div class="tech-tags">
-            <span>Endpoint</span>
-            <span>Malware</span>
-            <span>NetAcad</span>
+      <!-- Cisco Endpoint Security -->
+      <article class="cert-card" data-category="cisco seguridad">
+        <div class="card-top">
+          <span class="issuer">Cisco Networking Academy</span>
+          <h3>Endpoint Security</h3>
+          <p>Formación orientada a la mitigación de amenazas en red, detección y análisis de ficheros de malware a partir de capturas de tráfico y aseguramiento de puestos de trabajo.</p>
+          <div class="tech-chips">
+            <span>Endpoints</span>
+            <span>Malware Analysis</span>
+            <span>Cisco</span>
           </div>
-          <a href="CERTIFICADOR/EndpointSecurityUpdate20261013-21-e8risf.pdf" target="_blank" class="action-btn">Ver Certificado (PDF)</a>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/EndpointSecurityUpdate20261013-21-e8risf.pdf" target="_blank" class="primary-btn">📄 Ver Certificado Oficial (PDF)</a>
         </div>
       </article>
 
-      <article class="gallery-item" data-category="certificaciones seguridad">
-        <div class="item-bg bg-cyber"></div>
-        <div class="visible-title">Cisco: Intro to Cybersecurity</div>
-        <div class="overlay-info">
-          <span class="category-tag">Cisco Networking Academy</span>
-          <h2>Introduction to Cybersecurity</h2>
-          <p>Fundamentos de protección online, amenazas comunes, vectores de ataque y estrategias de defensa corporativa.</p>
-          <div class="tech-tags">
+      <!-- Cisco Intro Cybersecurity -->
+      <article class="cert-card" data-category="cisco seguridad">
+        <div class="card-top">
+          <span class="issuer">Cisco Networking Academy</span>
+          <h3>Introduction to Cybersecurity</h3>
+          <p>Principios esenciales de seguridad en línea, identificación de vectores de amenaza y ataques cibernéticos habituales, y diseño de medidas de protección empresarial.</p>
+          <div class="tech-chips">
             <span>Cybersecurity</span>
-            <span>Defensa</span>
+            <span>Defense</span>
             <span>NetAcad</span>
           </div>
-          <a href="CERTIFICADOR/I2CSUpdate20260923-20-7km3rr.pdf" target="_blank" class="action-btn">Ver Certificado (PDF)</a>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/I2CSUpdate20260923-20-7km3rr.pdf" target="_blank" class="primary-btn">📄 Ver Certificado Oficial (PDF)</a>
         </div>
       </article>
 
-      <article class="gallery-item" data-category="certificaciones redes">
-        <div class="item-bg bg-packet"></div>
-        <div class="visible-title">Cisco: Packet Tracer & IoT</div>
-        <div class="overlay-info">
-          <span class="category-tag">Cisco Networking Academy</span>
-          <h2>Packet Tracer & IoT</h2>
-          <p>Modelado de topologías de red, simulación de tráfico y conceptos de integración con dispositivos IoT.</p>
-          <div class="tech-tags">
+      <!-- Packet Tracer & IoT -->
+      <article class="cert-card" data-category="cisco">
+        <div class="card-top">
+          <span class="issuer">Cisco Networking Academy</span>
+          <h3>Packet Tracer & Ecosistemas IoT</h3>
+          <p>Certificaciones en diseño, configuración y resolución de averías en topologías de red complejas mediante Cisco Packet Tracer y su integración con tecnologías IoT.</p>
+          <div class="tech-chips">
             <span>Packet Tracer</span>
             <span>IoT</span>
-            <span>Simulación</span>
+            <span>Simulación Cisco</span>
           </div>
-          <div class="btn-group">
-            <a href="CERTIFICADOR/Getting_Started_with_Cisco_Packet_Tracer_certificate_romadefe-digitechfp-com_caccefa7-9729-4f6e-86b0-4695c3cc9713.pdf" target="_blank" class="action-btn">Intro Packet Tracer</a>
-            <a href="CERTIFICADOR/Exploring_IoT_with_Cisco_Packet_Tracer_certificate_romadefe-digitechfp-com_ff316563-8352-4b60-9506-007dbe29de84 (1).pdf" target="_blank" class="action-btn">Exploración IoT</a>
-          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/Getting_Started_with_Cisco_Packet_Tracer_certificate_romadefe-digitechfp-com_caccefa7-9729-4f6e-86b0-4695c3cc9713.pdf" target="_blank" class="primary-btn">📄 Intro Packet Tracer (PDF)</a>
+          <a href="CERTIFICADOR/Exploring_IoT_with_Cisco_Packet_Tracer_certificate_romadefe-digitechfp-com_ff316563-8352-4b60-9506-007dbe29de84%20(1).pdf" target="_blank" class="secondary-btn">📄 Exploración IoT (PDF)</a>
         </div>
       </article>
 
-      <article class="gallery-item" data-category="certificaciones">
-        <div class="item-bg bg-ia"></div>
-        <div class="visible-title">BIG School: Certificados IA</div>
-        <div class="overlay-info">
-          <span class="category-tag">Inteligencia Artificial</span>
-          <h2>Agentes de IA & Automatización</h2>
-          <p>Capacitación en modelos generativos avanzados, flujos de automatización y despliegue operativo de agentes inteligentes.</p>
-          <div class="tech-tags">
+      <!-- Laboratorio VPN PKT -->
+      <article class="cert-card" data-category="laboratorio seguridad">
+        <div class="card-top">
+          <span class="issuer">Laboratorio Práctico ASIR</span>
+          <h3>Despliegue de VPN & ACLs</h3>
+          <p>Proyecto real de conectividad segura: configuración de túneles VPN punto a punto entre sedes y aplicación de Listas de Control de Acceso (ACLs) estándar y extendidas.</p>
+          <div class="tech-chips">
+            <span>Packet Tracer (.PKT)</span>
+            <span>Cisco IOS</span>
+            <span>VPN Tunnel</span>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="VPN-LISTAS%20DE%20CONTROL%20DE%20ACCESO_ANGEL_LEAL%20(2).pkt" download class="primary-btn">💾 Descargar Archivo .PKT</a>
+        </div>
+      </article>
+
+      <!-- BIG School IA -->
+      <article class="cert-card" data-category="ia">
+        <div class="card-top">
+          <span class="issuer">BIG School</span>
+          <h3>Agentes de IA & Automatización</h3>
+          <p>Especialización en herramientas de inteligencia artificial aplicada, optimización de productividad técnica y automatización de flujos de trabajo mediante agentes autónomos.</p>
+          <div class="tech-chips">
             <span>Agentes IA</span>
             <span>Automatización</span>
-            <span>BIG School</span>
+            <span>Prompting</span>
           </div>
-          <div class="btn-group">
-            <a href="CERTIFICADOR/Certificado-Angel-Leal-jag7obhh.pdf" target="_blank" class="action-btn">Curso de 0 a Agentes</a>
-            <a href="CERTIFICADOR/Certificado-Angel-Leal-gj3cta9w.pdf" target="_blank" class="action-btn">Iniciación a la IA</a>
-          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/Certificado-Angel-Leal-jag7obhh.pdf" target="_blank" class="primary-btn">📄 De 0 a Agentes (PDF)</a>
+          <a href="CERTIFICADOR/Certificado-Angel-Leal-gj3cta9w.pdf" target="_blank" class="secondary-btn">📄 Iniciación a la IA (PDF)</a>
         </div>
       </article>
 
-      <article class="gallery-item" data-category="certificaciones">
-        <div class="item-bg bg-green"></div>
-        <div class="visible-title">Cisco: IT Sustainability</div>
-        <div class="overlay-info">
-          <span class="category-tag">Sostenibilidad IT</span>
-          <h2>Greenhouse Gas Accounting</h2>
-          <p>Acreditación en contabilización y gestión de emisiones de gases de efecto invernadero orientada a infraestructuras IT.</p>
-          <div class="tech-tags">
+      <!-- Cisco Sostenibilidad -->
+      <article class="cert-card" data-category="cisco">
+        <div class="card-top">
+          <span class="issuer">Cisco Networking Academy</span>
+          <h3>Greenhouse Gas Accounting for IT</h3>
+          <p>Acreditación internacional en cálculo, seguimiento y control de la huella de carbono y emisiones de efecto invernadero en infraestructuras y centros de procesamiento de datos.</p>
+          <div class="tech-chips">
             <span>Green IT</span>
+            <span>Sostenibilidad</span>
             <span>Eficiencia</span>
-            <span>NetAcad</span>
           </div>
-          <a href="CERTIFICADOR/Introduction_to_Greenhouse_Gas_Accounting_for_IT_certificate_romadefe-digitechfp-com_90f21871-7af7-41fe-932d-a7d6e2fc43be.pdf" target="_blank" class="action-btn">Ver Certificado (PDF)</a>
         </div>
-      </article>
-
-      <article class="gallery-item" data-category="seguridad redes">
-        <div class="item-bg bg-vpn"></div>
-        <div class="visible-title">Despliegue VPN & ACLs</div>
-        <div class="overlay-info">
-          <span class="category-tag">Ciberseguridad / Redes</span>
-          <h2>VPN & Filtrado por ACLs</h2>
-          <p>Túneles seguros entre sedes con listas de control de acceso para segmentación y bloqueo de tráfico no autorizado.</p>
-          <div class="tech-tags">
-            <span>Packet Tracer</span>
-            <span>Cisco IOS</span>
-            <span>ACLs</span>
-            <span>VPN</span>
-          </div>
-          <a href="VPN-LISTAS DE CONTROL DE ACCESO_ANGEL_LEAL (2).pkt" download class="action-btn">Descargar .PKT</a>
-        </div>
-      </article>
-
-      <article class="gallery-item" data-category="seguridad">
-        <div class="item-bg bg-mitm"></div>
-        <div class="visible-title">Laboratorio MITM & Spoofing</div>
-        <div class="overlay-info">
-          <span class="category-tag">Seguridad y Hardening</span>
-          <h2>Ataque MITM en Red Local</h2>
-          <p>Práctica de intercepción y spoofing ARP en entorno local con Kali Linux y monitorización mediante Wireshark.</p>
-          <div class="tech-tags">
-            <span>Kali Linux</span>
-            <span>Wireshark</span>
-            <span>arpspoof</span>
-          </div>
-          <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Documentación</a>
-        </div>
-      </article>
-
-      <article class="gallery-item" data-category="redes">
-        <div class="item-bg bg-wan"></div>
-        <div class="visible-title">Topología WAN Multi-Nodo</div>
-        <div class="overlay-info">
-          <span class="category-tag">Planificación de Redes</span>
-          <h2>Routing WAN por Políticas</h2>
-          <p>Topología multisede con routers Cisco, direccionamiento VLSM y enrutamiento por políticas (PBR).</p>
-          <div class="tech-tags">
-            <span>Cisco IOS</span>
-            <span>PBR</span>
-            <span>Catalyst 2960</span>
-          </div>
-          <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Topología</a>
-        </div>
-      </article>
-
-      <article class="gallery-item" data-category="sistemas">
-        <div class="item-bg bg-sys"></div>
-        <div class="visible-title">Windows Server & Linux CLI</div>
-        <div class="overlay-info">
-          <span class="category-tag">Sistemas Operativos</span>
-          <h2>Directorio Activo & Linux</h2>
-          <p>Gestión de controladores de dominio (GPOs, OUs) en Windows Server y administración CLI, LVM y Bash en Linux.</p>
-          <div class="tech-tags">
-            <span>Active Directory</span>
-            <span>Ubuntu Server</span>
-            <span>Bash</span>
-          </div>
-          <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Detalles</a>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/Introduction_to_Greenhouse_Gas_Accounting_for_IT_certificate_romadefe-digitechfp-com_90f21871-7af7-41fe-932d-a7d6e2fc43be.pdf" target="_blank" class="primary-btn">📄 Ver Certificado Oficial (PDF)</a>
         </div>
       </article>
 
     </main>
 
     <footer>
-      <p>Ángel Leal Delgado &bull; Técnico en Sistemas Microinformáticos y Redes &bull; Estudiante ASIR</p>
+      <p>Ángel Leal Delgado &bull; Perfil Técnico Administrador de Sistemas y Redes (ASIR)</p>
     </footer>
   </div>
 
   <script>
     function filterGallery(category) {
-      const buttons = document.querySelectorAll('nav.nav-bar button');
+      const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
 
-      const items = document.querySelectorAll('.gallery-item');
+      const items = document.querySelectorAll('.cert-card');
       items.forEach(item => {
         if (category === 'all' || item.getAttribute('data-category').includes(category)) {
-          item.style.display = 'block';
+          item.style.display = 'flex';
         } else {
           item.style.display = 'none';
         }
