@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ángel Leal | Portafolio Técnico ASIR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --accent: #58a6ff;
+      --accent-sub: #238636;
+      --badge-bg: #21262d;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 1rem 3rem;
+    }
+    header {
+      max-width: 1000px;
+      margin: 3rem auto 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.3rem;
+      color: var(--text-bright);
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .intro {
+      max-width: 750px;
+      margin: 1rem auto;
+      color: #8b949e;
+      font-size: 0.95rem;
+    }
+    .contact-bar {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .contact-bar a {
+      color: var(--text-bright);
+      text-decoration: none;
+      background: var(--badge-bg);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .contact-bar a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .nav-tabs {
+      max-width: 1000px;
+      margin: 2rem auto 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .nav-tabs button {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .nav-tabs button.active, .nav-tabs button:hover {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+    .grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--accent);
+      background: rgba(88, 166, 255, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+    .card h3 {
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      margin-bottom: 0.6rem;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #8b949e;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .skills-list span {
+      background: var(--badge-bg);
+      border: 1px solid var(--border);
+      color: #8b949e;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+    .card-footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .card-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ángel Leal Delgado</h1>
+    <p>Administrador de Sistemas Informáticos en Red (ASIR) | Seguridad & Redes</p>
+    <div class="intro">
+      Técnico en SMR y estudiante de 2.º año de ASIR en DIGITECH (Madrid). Especializado en administración de servidores Linux/Windows, seguridad en redes e infraestructuras virtuales.
+    </div>
+    <div class="contact-bar">
+      <a href="mailto:angellealdo.1@gmail.com">✉️ angellealdo.1@gmail.com</a>
+      <a href="tel:634686594">📞 634 68 65 94</a>
+      <a href="https://github.com/angellealdigitech-design" target="_blank">💻 GitHub Profile</a>
+    </div>
+  </header>
+
+  <div class="nav-tabs">
+    <button class="active" onclick="filterCards('all')">Todos los Proyectos</button>
+    <button onclick="filterCards('redes')">Redes & Cisco</button>
+    <button onclick="filterCards('seguridad')">Ciberseguridad</button>
+    <button onclick="filterCards('sistemas')">Sistemas Operativos</button>
+    <button onclick="filterCards('certificaciones')">Certificaciones</button>
+  </div>
+
+  <main class="grid" id="projectsGrid">
+
+    <!-- Tarjeta: VPN & ACLs -->
+    <article class="card" data-category="seguridad redes">
+      <div>
+        <span class="tag">Seguridad en Redes</span>
+        <h3>Túneles VPN y Listas de Control de Acceso (ACLs)</h3>
+        <p>Implementación de topología segura en Cisco Packet Tracer con interconexión de sedes vía VPN y segmentación granular con ACLs estándar y extendidas para mitigar tráfico no autorizado.</p>
+        <div class="skills-list">
+          <span>Packet Tracer</span>
+          <span>Cisco IOS</span>
+          <span>ACLs</span>
+          <span>VPN IPsec</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="VPN-LISTAS DE CONTROL DE ACCESO_ANGEL_LEAL (2).pkt" download>Descargar topología (.pkt) →</a>
+      </div>
+    </article>
+
+    <!-- Tarjeta: Laboratorio MITM -->
+    <article class="card" data-category="seguridad sistemas">
+      <div>
+        <span class="tag">Auditoría & Hacking Ético</span>
+        <h3>Laboratorio MITM: ARP Spoofing y Análisis de Tráfico</h3>
+        <p>Práctica de intercepción de tráfico en red local mediante envenenamiento de tablas ARP con arpspoof en Kali Linux frente a una víctima Windows 10, documentando la captura con Wireshark.</p>
+        <div class="skills-list">
+          <span>Kali Linux</span>
+          <span>Wireshark</span>
+          <span>arpspoof</span>
+          <span>dsniff</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="#projectsGrid">Entorno Virtualizado en Puente →</a>
+      </div>
+    </article>
+
+    <!-- Tarjeta: Red WAN/LAN -->
+    <article class="card" data-category="redes">
+      <div>
+        <span class="tag">Planificación de Redes</span>
+        <h3>Topología WAN Multi-nodo con Routing por Políticas</h3>
+        <p>Despliegue de red jerárquica con routers interconectados por enlaces serie clase A (/8), subredes corporativas /16 y /24, y control de saltos mediante enrutamiento por políticas.</p>
+        <div class="skills-list">
+          <span>Cisco Routers</span>
+          <span>Catalyst 2960</span>
+          <span>PBR</span>
+          <span>VLANs</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="#projectsGrid">Simulación Packet Tracer →</a>
+      </div>
+    </article>
+
+    <!-- Tarjeta: Sistemas Linux & Windows -->
+    <article class="card" data-category="sistemas">
+      <div>
+        <span class="tag">Administración de Sistemas</span>
+        <h3>Despliegue de Infraestructura y Directorio Activo</h3>
+        <p>Configuración de Windows Server (Active Directory DS, OUs, directivas de grupo GPOs, permisos NTFS) y servidores Linux (Debian/Ubuntu Server) para servicios DNS, DHCP y scripts Bash.</p>
+        <div class="skills-list">
+          <span>Active Directory</span>
+          <span>Ubuntu Server</span>
+          <span>GPO</span>
+          <span>Bash</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="#projectsGrid">Laboratorios ASIR / Digitech →</a>
+      </div>
+    </article>
+
+    <!-- Tarjeta: Cisco Certificaciones -->
+    <article class="card" data-category="certificaciones">
+      <div>
+        <span class="tag">Acreditaciones NetAcad</span>
+        <h3>Certificaciones Oficiales Cisco Networking Academy</h3>
+        <p>Acreditaciones verificadas en Ethical Hacker, Endpoint Security, Network Defense, Conceptos Básicos de Redes, Exploración IoT e Introducción a Cisco Packet Tracer.</p>
+        <div class="skills-list">
+          <span>Ethical Hacker</span>
+          <span>Endpoint Security</span>
+          <span>IoT</span>
+          <span>NetAcad</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="#projectsGrid">Credenciales Cisco Verificadas →</a>
+      </div>
+    </article>
+
+    <!-- Tarjeta: Big School IA -->
+    <article class="card" data-category="certificaciones">
+      <div>
+        <span class="tag">Formación Continua</span>
+        <h3>Inteligencia Artificial y Automatización de Agentes</h3>
+        <p>Certificaciones en fundamentos prácticos de IA generativa, diseño de prompts, integración de agentes autónomos y automatización de flujos de trabajo con BIG School.</p>
+        <div class="skills-list">
+          <span>Agentes IA</span>
+          <span>Automatización</span>
+          <span>ChatGPT</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="#projectsGrid">Certificado BIG School →</a>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function filterCards(category) {
+      const buttons = document.querySelectorAll('.nav-tabs button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category').includes(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
