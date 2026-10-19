@@ -11,7 +11,6 @@
     :root {
       --bg-main: #090d16;
       --bg-card: rgba(18, 24, 38, 0.75);
-      --bg-card-hover: rgba(26, 35, 56, 0.9);
       --border: rgba(255, 255, 255, 0.08);
       --border-accent: rgba(56, 189, 248, 0.3);
       --primary: #38bdf8;
@@ -49,7 +48,6 @@
     header.hero {
       padding: 4rem 1rem 3rem;
       text-align: center;
-      position: relative;
     }
 
     .status-badge {
@@ -64,7 +62,6 @@
       padding: 0.35rem 0.9rem;
       border-radius: 999px;
       margin-bottom: 1.2rem;
-      letter-spacing: 0.02em;
     }
 
     .status-dot {
@@ -125,19 +122,18 @@
       border-radius: 8px;
       font-size: 0.88rem;
       font-weight: 500;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.2s ease;
       backdrop-filter: blur(10px);
     }
 
     .contact-pill:hover {
       border-color: var(--primary);
-      background: var(--bg-card-hover);
       color: var(--primary);
       transform: translateY(-2px);
       box-shadow: 0 4px 15px var(--primary-glow);
     }
 
-    /* QUICK METRICS */
+    /* METRICAS */
     .metrics-bar {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -170,7 +166,7 @@
       font-weight: 600;
     }
 
-    /* TITULOS DE SECCIÓN */
+    /* TITULOS DE SECCION */
     .section-header {
       display: flex;
       align-items: center;
@@ -221,9 +217,6 @@
       font-weight: 600;
       color: var(--primary);
       margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
     .skill-box p {
@@ -232,55 +225,7 @@
       line-height: 1.6;
     }
 
-    /* COMPETENCIAS ASIR */
-    .subjects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .subject-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.4rem;
-      backdrop-filter: blur(10px);
-    }
-
-    .subject-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      color: #ffffff;
-    }
-
-    .subject-card ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .subject-card li {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      position: relative;
-      padding-left: 1.2rem;
-    }
-
-    .subject-card li::before {
-      content: "▹";
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-size: 0.9rem;
-    }
-
-    .subject-card li strong {
-      color: #e2e8f0;
-    }
-
-    /* FILTROS GALERÍA */
+    /* FILTROS */
     .filter-bar {
       display: flex;
       justify-content: center;
@@ -310,7 +255,7 @@
       box-shadow: 0 2px 10px var(--primary-glow);
     }
 
-    /* GALERÍA CARDS */
+    /* CARDS */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -328,7 +273,6 @@
       backdrop-filter: blur(10px);
       transition: all 0.25s ease;
       position: relative;
-      overflow: hidden;
     }
 
     .cert-card::before {
@@ -444,7 +388,6 @@
       border-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       margin-top: 5rem;
@@ -465,7 +408,7 @@
       <h1>Ángel Leal Delgado</h1>
       <div class="subtitle">Técnico SMR &bull; Estudiante de 2.º año ASIR en DIGITECH (Madrid)</div>
       <p class="bio">
-        En búsqueda activa de prácticas curriculares. Especializado en administración de sistemas (Linux y Windows Server), diseño e implementación de redes seguras, ciberseguridad perimetral y virtualización de servicios.
+        En búsqueda activa de prácticas curriculares. Perfil enfocado en la administración de redes informáticas, seguridad en comunicaciones y despliegue de soluciones tecnológicas.
       </p>
       
       <div class="contact-nav">
@@ -475,7 +418,6 @@
       </div>
     </header>
 
-    <!-- METRICAS RESUMEN -->
     <div class="metrics-bar">
       <div class="metric-card">
         <span class="num">2.º ASIR</span>
@@ -491,94 +433,34 @@
       </div>
       <div class="metric-card">
         <span class="num">BIG School</span>
-        <span class="label">Especialización en IA</span>
+        <span class="label">Certificaciones en IA</span>
       </div>
     </div>
 
-    <!-- HABILIDADES -->
     <div class="section-header">
       <h2>Habilidades Técnicas</h2>
-      <span class="tag">STACK</span>
+      <span class="tag">COMPETENCIAS</span>
     </div>
 
     <div class="skills-grid">
       <div class="skill-box">
-        <h3>🐧 Sistemas Operativos</h3>
-        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS.</p>
+        <h3>🌐 Redes y Comunicaciones</h3>
+        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, segmentación VLANs y simulación de topologías con Cisco Packet Tracer.</p>
       </div>
       <div class="skill-box">
-        <h3>🌐 Redes & Routing</h3>
-        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark.</p>
+        <h3>🛡️ Ciberseguridad & VPN</h3>
+        <p>Filtrado de tráfico mediante Listas de Control de Acceso (ACLs), securización de endpoints y configuración de túneles VPN punto a punto.</p>
       </div>
       <div class="skill-box">
-        <h3>🛡️ Ciberseguridad</h3>
-        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad.</p>
+        <h3>🤖 Inteligencia Artificial Aplicada</h3>
+        <p>Automatización de flujos de trabajo, integración de agentes inteligentes y optimización de tareas técnicas con IA.</p>
       </div>
       <div class="skill-box">
-        <h3>⚡ Servicios e Infraestructura</h3>
-        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, arquitecturas LAMP y entornos virtualizados en VMware, VirtualBox y contenedores.</p>
+        <h3>🌱 Sostenibilidad IT</h3>
+        <p>Acreditación en contabilización y gestión de la huella de carbono / emisiones de efecto invernadero en infraestructuras tecnológicas.</p>
       </div>
     </div>
 
-    <!-- ASIGNATURAS Y PROYECTOS -->
-    <div class="section-header">
-      <h2>Competencias Aplicadas en ASIR</h2>
-      <span class="tag">FORMACIÓN</span>
-    </div>
-
-    <div class="subjects-grid">
-      <div class="subject-card">
-        <h3>🌐 Planificación y Administración de Redes</h3>
-        <ul>
-          <li><strong>Topologías LAN/WAN:</strong> Diseño sobre Packet Tracer con cálculo VLSM en IPv4 e IPv6.</li>
-          <li><strong>Switching Avanzado:</strong> Segmentación por VLANs, enlaces troncales y enrutamiento inter-VLAN.</li>
-          <li><strong>Enrutamiento:</strong> Tablas estáticas, rutas por políticas (PBR) y protocolos dinámicos.</li>
-        </ul>
-      </div>
-
-      <div class="subject-card">
-        <h3>🛡️ Seguridad y Alta Disponibilidad</h3>
-        <ul>
-          <li><strong>Seguridad Perimetral:</strong> Despliegue de túneles VPN y filtrado exhaustivo por ACLs.</li>
-          <li><strong>Auditoría de Red:</strong> Monitorización de paquetes, diagnóstico de anomalías e inspección de tráfico.</li>
-          <li><strong>Continuidad de Negocio:</strong> Configuraciones RAID, políticas de backup y tolerancia a fallos.</li>
-        </ul>
-      </div>
-
-      <div class="subject-card">
-        <h3>🖥️ Administración de Sistemas</h3>
-        <ul>
-          <li><strong>Linux Server:</strong> Permisos avanzados, gestión de almacenamiento LVM y scripts en Bash.</li>
-          <li><strong>Windows Server:</strong> Despliegue de dominio Active Directory, estructura OUs y directivas GPO.</li>
-        </ul>
-      </div>
-
-      <div class="subject-card">
-        <h3>🌍 Servicios de Red e Internet</h3>
-        <ul>
-          <li><strong>Infraestructura Base:</strong> Servidores DHCP con reservas y resolución de nombres DNS Bind9.</li>
-          <li><strong>Servidores Seguros:</strong> Configuración y hardening de servidores Web (Apache/Nginx) y SSH.</li>
-        </ul>
-      </div>
-
-      <div class="subject-card">
-        <h3>🗄️ Gestión de Bases de Datos</h3>
-        <ul>
-          <li><strong>Modelado Relacional:</strong> Normalización, integridad referencial y diagramas E/R.</li>
-          <li><strong>MySQL / MariaDB:</strong> Consultas complejas DDL/DML, gestión de privilegios y backups periódicos.</li>
-        </ul>
-      </div>
-
-      <div class="subject-card">
-        <h3>☁️ Implantación de Aplicaciones Web</h3>
-        <ul>
-          <li><strong>Pilas LAMP:</strong> Puesta en marcha de entornos Linux + Apache + MariaDB + PHP.</li>
-          <li><strong>Sistemas CMS:</strong> Instalación de gestores de contenidos y resolución de incidencias web.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- CERTIFICADOS & PROYECTOS REALES -->
     <div class="section-header">
       <h2>Acreditaciones Oficiales y Proyectos</h2>
       <span class="tag">VERIFICADOS</span>
@@ -599,10 +481,10 @@
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Ethical Hacker</h3>
-          <p>Acreditación técnica en metodología de pruebas de penetración, escaneo estructurado de vulnerabilidades, explotación en redes cableadas/inalámbricas y redacción de informes técnicos.</p>
+          <p>Acreditación técnica en metodología de pentesting, escaneo estructurado de vulnerabilidades, explotación en redes cableadas/inalámbricas e informes de seguridad.</p>
           <div class="tech-chips">
             <span>Pentesting</span>
-            <span>Auditoría</span>
+            <span>Vulnerabilidades</span>
             <span>NetAcad</span>
           </div>
         </div>
@@ -616,11 +498,11 @@
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Endpoint Security</h3>
-          <p>Formación orientada a la mitigación de amenazas en red, detección y análisis de ficheros de malware a partir de capturas de tráfico y aseguramiento de puestos de trabajo.</p>
+          <p>Mitigación de amenazas en red, detección de malware mediante análisis de capturas de tráfico y aseguramiento de terminales.</p>
           <div class="tech-chips">
-            <span>Endpoints</span>
+            <span>Endpoint</span>
             <span>Malware Analysis</span>
-            <span>Cisco</span>
+            <span>NetAcad</span>
           </div>
         </div>
         <div class="btn-actions">
@@ -633,10 +515,10 @@
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Introduction to Cybersecurity</h3>
-          <p>Principios esenciales de seguridad en línea, identificación de vectores de amenaza y ataques cibernéticos habituales, y diseño de medidas de protección empresarial.</p>
+          <p>Fundamentos de seguridad en línea, vectores de ataque habituales y medidas de protección corporativas para infraestructura digital.</p>
           <div class="tech-chips">
             <span>Cybersecurity</span>
-            <span>Defense</span>
+            <span>Defensa</span>
             <span>NetAcad</span>
           </div>
         </div>
@@ -650,11 +532,11 @@
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Packet Tracer & Ecosistemas IoT</h3>
-          <p>Certificaciones en diseño, configuración y resolución de averías en topologías de red complejas mediante Cisco Packet Tracer y su integración con tecnologías IoT.</p>
+          <p>Acreditaciones oficiales en diseño y simulación de topologías de red en Packet Tracer e integración con dispositivos de internet de las cosas.</p>
           <div class="tech-chips">
             <span>Packet Tracer</span>
             <span>IoT</span>
-            <span>Simulación Cisco</span>
+            <span>NetAcad</span>
           </div>
         </div>
         <div class="btn-actions">
@@ -668,7 +550,7 @@
         <div class="card-top">
           <span class="issuer">Laboratorio Práctico ASIR</span>
           <h3>Despliegue de VPN & ACLs</h3>
-          <p>Proyecto real de conectividad segura: configuración de túneles VPN punto a punto entre sedes y aplicación de Listas de Control de Acceso (ACLs) estándar y extendidas.</p>
+          <p>Topología práctica en Packet Tracer con enlaces VPN punto a punto y filtrado de paquetes mediante Listas de Control de Acceso (ACLs).</p>
           <div class="tech-chips">
             <span>Packet Tracer (.PKT)</span>
             <span>Cisco IOS</span>
@@ -685,11 +567,11 @@
         <div class="card-top">
           <span class="issuer">BIG School</span>
           <h3>Agentes de IA & Automatización</h3>
-          <p>Especialización en herramientas de inteligencia artificial aplicada, optimización de productividad técnica y automatización de flujos de trabajo mediante agentes autónomos.</p>
+          <p>Capacitación técnica en aplicaciones de modelos generativos, automatización de tareas y desarrollo con agentes de inteligencia artificial.</p>
           <div class="tech-chips">
             <span>Agentes IA</span>
             <span>Automatización</span>
-            <span>Prompting</span>
+            <span>BIG School</span>
           </div>
         </div>
         <div class="btn-actions">
@@ -703,11 +585,11 @@
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Greenhouse Gas Accounting for IT</h3>
-          <p>Acreditación internacional en cálculo, seguimiento y control de la huella de carbono y emisiones de efecto invernadero en infraestructuras y centros de procesamiento de datos.</p>
+          <p>Contabilización y gestión ambiental de centros de datos y sistemas informáticos según estándares de sostenibilidad tecnológica.</p>
           <div class="tech-chips">
             <span>Green IT</span>
             <span>Sostenibilidad</span>
-            <span>Eficiencia</span>
+            <span>NetAcad</span>
           </div>
         </div>
         <div class="btn-actions">
@@ -718,7 +600,7 @@
     </main>
 
     <footer>
-      <p>Ángel Leal Delgado &bull; Perfil Técnico Administrador de Sistemas y Redes (ASIR)</p>
+      <p>Ángel Leal Delgado &bull; Técnico en Sistemas Microinformáticos y Redes &bull; Estudiante ASIR</p>
     </footer>
   </div>
 
