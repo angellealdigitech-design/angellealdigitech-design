@@ -3,308 +3,386 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ángel Leal | Portafolio Técnico ASIR</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Ángel Leal Delgado | Portafolio Técnico ASIR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0d1117;
-      --card-bg: #161b22;
-      --border: #30363d;
-      --text: #c9d1d9;
-      --text-bright: #f0f6fc;
-      --accent: #58a6ff;
-      --accent-sub: #238636;
-      --badge-bg: #21262d;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
+      background-color: #0d1117;
+      color: #f0f6fc;
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 0 1rem 3rem;
+      overflow-x: hidden;
     }
     header {
-      max-width: 1000px;
-      margin: 3rem auto 2rem;
       text-align: center;
+      padding: 3.5rem 1.5rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
     header h1 {
-      font-size: 2.3rem;
-      color: var(--text-bright);
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      color: var(--accent);
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-    .intro {
-      max-width: 750px;
-      margin: 1rem auto;
-      color: #8b949e;
-      font-size: 0.95rem;
-    }
-    .contact-bar {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .contact-bar a {
-      color: var(--text-bright);
-      text-decoration: none;
-      background: var(--badge-bg);
-      border: 1px solid var(--border);
-      padding: 0.4rem 0.9rem;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      transition: all 0.2s;
-    }
-    .contact-bar a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    .nav-tabs {
-      max-width: 1000px;
-      margin: 2rem auto 1.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .nav-tabs button {
-      background: var(--card-bg);
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.2s;
-    }
-    .nav-tabs button.active, .nav-tabs button:hover {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-    }
-    .grid {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-    }
-    .tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      color: var(--accent);
-      background: rgba(88, 166, 255, 0.1);
-      padding: 0.2rem 0.6rem;
-      border-radius: 12px;
-      margin-bottom: 0.8rem;
-      font-weight: 600;
-      width: fit-content;
-    }
-    .card h3 {
-      font-size: 1.15rem;
-      color: var(--text-bright);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.25em;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #ffffff;
       margin-bottom: 0.6rem;
     }
-    .card p {
+    header p {
       font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       color: #8b949e;
-      margin-bottom: 1rem;
-      flex-grow: 1;
+      margin-bottom: 1.8rem;
     }
-    .skills-list {
+    nav.nav-bar {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+    nav.nav-bar button {
+      background: none;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      color: #8b949e;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid transparent;
+      transition: all 0.25s ease;
+    }
+    nav.nav-bar button:hover,
+    nav.nav-bar button.active {
+      color: #ffffff;
+      border-color: #58a6ff;
+    }
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      padding: 3px;
+      background-color: #161b22;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    @media (max-width: 1024px) {
+      .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 650px) {
+      .gallery-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .gallery-item {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+      background-color: #1a222d;
+      cursor: pointer;
+    }
+    .item-bg {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
+      filter: brightness(0.75) contrast(1.1);
+    }
+    .gallery-item:hover .item-bg {
+      transform: scale(1.06);
+      filter: brightness(0.25) blur(2px);
+    }
+    .bg-vpn {
+      background: radial-gradient(circle at center, rgba(30, 58, 138, 0.8), #0b1120),
+                  radial-gradient(circle at 80% 20%, #3b82f6 0%, transparent 40%),
+                  repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 14px);
+    }
+    .bg-mitm {
+      background: radial-gradient(circle at center, rgba(88, 28, 135, 0.85), #0f172a),
+                  repeating-linear-gradient(0deg, rgba(168, 85, 247, 0.08) 0px, transparent 2px, transparent 6px);
+    }
+    .bg-wan {
+      background: radial-gradient(circle at center, rgba(6, 78, 59, 0.85), #022c22),
+                  radial-gradient(circle at 20% 80%, #10b981 0%, transparent 45%);
+    }
+    .bg-sys {
+      background: radial-gradient(circle at center, rgba(30, 41, 59, 0.9), #030712),
+                  repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, transparent 1px, transparent 40px);
+    }
+    .bg-cisco {
+      background: radial-gradient(circle at center, rgba(14, 116, 144, 0.85), #083344),
+                  radial-gradient(circle at 75% 75%, #06b6d4 0%, transparent 50%);
+    }
+    .bg-ia {
+      background: radial-gradient(circle at center, rgba(131, 24, 67, 0.85), #4c0519),
+                  repeating-linear-gradient(135deg, rgba(244, 63, 94, 0.07) 0px, transparent 2px, transparent 8px);
+    }
+    .visible-title {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+    }
+    .gallery-item:hover .visible-title {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .overlay-info {
+      position: absolute;
+      inset: 0;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .gallery-item:hover .overlay-info {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .overlay-info .category-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #58a6ff;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+    .overlay-info h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.9rem;
+      line-height: 1.3;
+    }
+    .overlay-info p {
+      font-size: 0.88rem;
+      color: #c9d1d9;
+      line-height: 1.55;
+      margin-bottom: 1.4rem;
+    }
+    .tech-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.6rem;
     }
-    .skills-list span {
-      background: var(--badge-bg);
-      border: 1px solid var(--border);
-      color: #8b949e;
+    .tech-tags span {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+    }
+    .overlay-info a.action-btn {
+      display: inline-block;
+      align-self: flex-start;
+      font-family: 'Montserrat', sans-serif;
       font-size: 0.75rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #0d1117;
+      background: #58a6ff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
-    .card-footer a {
-      color: var(--accent);
+    .overlay-info a.action-btn:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 2rem;
+    }
+    footer .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: #58a6ff;
       text-decoration: none;
       font-size: 0.85rem;
-      font-weight: 600;
+      letter-spacing: 0.08em;
     }
-    .card-footer a:hover { text-decoration: underline; }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Ángel Leal Delgado</h1>
-    <p>Administrador de Sistemas Informáticos en Red (ASIR) | Seguridad & Redes</p>
-    <div class="intro">
-      Técnico en SMR y estudiante de 2.º año de ASIR en DIGITECH (Madrid). Especializado en administración de servidores Linux/Windows, seguridad en redes e infraestructuras virtuales.
-    </div>
-    <div class="contact-bar">
-      <a href="mailto:angellealdo.1@gmail.com">✉️ angellealdo.1@gmail.com</a>
-      <a href="tel:634686594">📞 634 68 65 94</a>
-      <a href="https://github.com/angellealdigitech-design" target="_blank">💻 GitHub Profile</a>
-    </div>
+    <h1>ÁNGEL LEAL DELGADO</h1>
+    <p>ASIR &bull; INFRAESTRUCTURA DE REDES &bull; CIBERSEGURIDAD</p>
+    <nav class="nav-bar">
+      <button class="active" onclick="filterGallery('all')">Todos</button>
+      <button onclick="filterGallery('redes')">Redes & Routing</button>
+      <button onclick="filterGallery('seguridad')">Ciberseguridad</button>
+      <button onclick="filterGallery('sistemas')">Sistemas</button>
+      <button onclick="filterGallery('certificaciones')">Acreditaciones</button>
+    </nav>
   </header>
 
-  <div class="nav-tabs">
-    <button class="active" onclick="filterCards('all')">Todos los Proyectos</button>
-    <button onclick="filterCards('redes')">Redes & Cisco</button>
-    <button onclick="filterCards('seguridad')">Ciberseguridad</button>
-    <button onclick="filterCards('sistemas')">Sistemas Operativos</button>
-    <button onclick="filterCards('certificaciones')">Certificaciones</button>
-  </div>
+  <main class="gallery-container" id="gallery">
 
-  <main class="grid" id="projectsGrid">
-
-    <!-- Tarjeta: VPN & ACLs -->
-    <article class="card" data-category="seguridad redes">
-      <div>
-        <span class="tag">Seguridad en Redes</span>
-        <h3>Túneles VPN y Listas de Control de Acceso (ACLs)</h3>
-        <p>Implementación de topología segura en Cisco Packet Tracer con interconexión de sedes vía VPN y segmentación granular con ACLs estándar y extendidas para mitigar tráfico no autorizado.</p>
-        <div class="skills-list">
+    <article class="gallery-item" data-category="seguridad redes">
+      <div class="item-bg bg-vpn"></div>
+      <div class="visible-title">Despliegue VPN & ACLs</div>
+      <div class="overlay-info">
+        <span class="category-tag">Ciberseguridad / Redes</span>
+        <h2>VPN & Filtrado por ACLs</h2>
+        <p>Túneles de comunicación segura entre sedes con listas de control de acceso para segmentación y bloqueo de paquetes no autorizados.</p>
+        <div class="tech-tags">
           <span>Packet Tracer</span>
           <span>Cisco IOS</span>
-          <span>ACLs</span>
-          <span>VPN IPsec</span>
+          <span>ACL Extendidas</span>
+          <span>VPN</span>
         </div>
-      </div>
-      <div class="card-footer">
-        <a href="VPN-LISTAS DE CONTROL DE ACCESO_ANGEL_LEAL (2).pkt" download>Descargar topología (.pkt) →</a>
+        <a href="VPN-LISTAS DE CONTROL DE ACCESO_ANGEL_LEAL (2).pkt" download class="action-btn">Descargar .PKT</a>
       </div>
     </article>
 
-    <!-- Tarjeta: Laboratorio MITM -->
-    <article class="card" data-category="seguridad sistemas">
-      <div>
-        <span class="tag">Auditoría & Hacking Ético</span>
-        <h3>Laboratorio MITM: ARP Spoofing y Análisis de Tráfico</h3>
-        <p>Práctica de intercepción de tráfico en red local mediante envenenamiento de tablas ARP con arpspoof en Kali Linux frente a una víctima Windows 10, documentando la captura con Wireshark.</p>
-        <div class="skills-list">
+    <article class="gallery-item" data-category="seguridad">
+      <div class="item-bg bg-mitm"></div>
+      <div class="visible-title">Laboratorio MITM & ARP Spoofing</div>
+      <div class="overlay-info">
+        <span class="category-tag">Seguridad y Hardening</span>
+        <h2>Ataque MITM en Red Local</h2>
+        <p>Práctica controlada entre máquina atacante (Kali Linux) y víctima (Windows 10) analizando la interceptación con arpspoof y Wireshark.</p>
+        <div class="tech-tags">
           <span>Kali Linux</span>
           <span>Wireshark</span>
           <span>arpspoof</span>
-          <span>dsniff</span>
+          <span>IP Forwarding</span>
         </div>
-      </div>
-      <div class="card-footer">
-        <a href="#projectsGrid">Entorno Virtualizado en Puente →</a>
+        <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Documentación</a>
       </div>
     </article>
 
-    <!-- Tarjeta: Red WAN/LAN -->
-    <article class="card" data-category="redes">
-      <div>
-        <span class="tag">Planificación de Redes</span>
-        <h3>Topología WAN Multi-nodo con Routing por Políticas</h3>
-        <p>Despliegue de red jerárquica con routers interconectados por enlaces serie clase A (/8), subredes corporativas /16 y /24, y control de saltos mediante enrutamiento por políticas.</p>
-        <div class="skills-list">
-          <span>Cisco Routers</span>
+    <article class="gallery-item" data-category="redes">
+      <div class="item-bg bg-wan"></div>
+      <div class="visible-title">Topología WAN Multi-Nodo</div>
+      <div class="overlay-info">
+        <span class="category-tag">Planificación de Redes</span>
+        <h2>Routing WAN por Políticas</h2>
+        <p>Interconexión con 3 routers en enlaces serie /8 y subredes LAN /16 y /24 con políticas de control de tráfico (PBR) y Catalyst 2960.</p>
+        <div class="tech-tags">
           <span>Catalyst 2960</span>
-          <span>PBR</span>
+          <span>IPv4 / VLSM</span>
+          <span>Policy Routing</span>
           <span>VLANs</span>
         </div>
-      </div>
-      <div class="card-footer">
-        <a href="#projectsGrid">Simulación Packet Tracer →</a>
+        <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Topología</a>
       </div>
     </article>
 
-    <!-- Tarjeta: Sistemas Linux & Windows -->
-    <article class="card" data-category="sistemas">
-      <div>
-        <span class="tag">Administración de Sistemas</span>
-        <h3>Despliegue de Infraestructura y Directorio Activo</h3>
-        <p>Configuración de Windows Server (Active Directory DS, OUs, directivas de grupo GPOs, permisos NTFS) y servidores Linux (Debian/Ubuntu Server) para servicios DNS, DHCP y scripts Bash.</p>
-        <div class="skills-list">
+    <article class="gallery-item" data-category="sistemas">
+      <div class="item-bg bg-sys"></div>
+      <div class="visible-title">Windows Server & Linux CLI</div>
+      <div class="overlay-info">
+        <span class="category-tag">Administración de Sistemas</span>
+        <h2>Directorio Activo & Linux Server</h2>
+        <p>Gestión de controladores de dominio (GPOs, OUs, permisos NTFS) en Windows Server y administración CLI, LVM y automatización Bash en Debian/Ubuntu.</p>
+        <div class="tech-tags">
           <span>Active Directory</span>
           <span>Ubuntu Server</span>
-          <span>GPO</span>
-          <span>Bash</span>
+          <span>Bash Scripting</span>
+          <span>DHCP/DNS</span>
         </div>
-      </div>
-      <div class="card-footer">
-        <a href="#projectsGrid">Laboratorios ASIR / Digitech →</a>
+        <a href="https://github.com/angellealdigitech-design" class="action-btn">Detalles</a>
       </div>
     </article>
 
-    <!-- Tarjeta: Cisco Certificaciones -->
-    <article class="card" data-category="certificaciones">
-      <div>
-        <span class="tag">Acreditaciones NetAcad</span>
-        <h3>Certificaciones Oficiales Cisco Networking Academy</h3>
-        <p>Acreditaciones verificadas en Ethical Hacker, Endpoint Security, Network Defense, Conceptos Básicos de Redes, Exploración IoT e Introducción a Cisco Packet Tracer.</p>
-        <div class="skills-list">
+    <article class="gallery-item" data-category="certificaciones redes seguridad">
+      <div class="item-bg bg-cisco"></div>
+      <div class="visible-title">Acreditaciones Cisco NetAcad</div>
+      <div class="overlay-info">
+        <span class="category-tag">Certificaciones Oficiales</span>
+        <h2>Cisco Networking Academy</h2>
+        <p>Credenciales verificadas en Ethical Hacker, Endpoint Security, Network Defense, Conceptos Básicos de Redes y Cisco Packet Tracer.</p>
+        <div class="tech-tags">
           <span>Ethical Hacker</span>
           <span>Endpoint Security</span>
+          <span>Network Defense</span>
           <span>IoT</span>
-          <span>NetAcad</span>
         </div>
-      </div>
-      <div class="card-footer">
-        <a href="#projectsGrid">Credenciales Cisco Verificadas →</a>
+        <a href="https://github.com/angellealdigitech-design" class="action-btn">Ver Credenciales</a>
       </div>
     </article>
 
-    <!-- Tarjeta: Big School IA -->
-    <article class="card" data-category="certificaciones">
-      <div>
-        <span class="tag">Formación Continua</span>
-        <h3>Inteligencia Artificial y Automatización de Agentes</h3>
-        <p>Certificaciones en fundamentos prácticos de IA generativa, diseño de prompts, integración de agentes autónomos y automatización de flujos de trabajo con BIG School.</p>
-        <div class="skills-list">
+    <article class="gallery-item" data-category="certificaciones">
+      <div class="item-bg bg-ia"></div>
+      <div class="visible-title">Inteligencia Artificial & Automatización</div>
+      <div class="overlay-info">
+        <span class="category-tag">Formación Continua</span>
+        <h2>Agentes de IA & Automatización</h2>
+        <p>Capacitación técnica en implementación de agentes inteligentes, optimización de tareas operativas y herramientas generativas en BIG School.</p>
+        <div class="tech-tags">
           <span>Agentes IA</span>
           <span>Automatización</span>
-          <span>ChatGPT</span>
+          <span>Productividad</span>
         </div>
-      </div>
-      <div class="card-footer">
-        <a href="#projectsGrid">Certificado BIG School →</a>
+        <a href="https://github.com/angellealdigitech-design" class="action-btn">Certificado IA</a>
       </div>
     </article>
 
   </main>
 
+  <footer>
+    <p>Ángel Leal Delgado &bull; Técnico en Sistemas Microinformáticos y Redes &bull; Estudiante ASIR</p>
+    <div class="contact-links">
+      <a href="mailto:angellealdo.1@gmail.com">angellealdo.1@gmail.com</a>
+      <a href="tel:634686594">+34 634 68 65 94</a>
+      <a href="https://github.com/angellealdigitech-design" target="_blank">Perfil GitHub</a>
+    </div>
+  </footer>
+
   <script>
-    function filterCards(category) {
-      const buttons = document.querySelectorAll('.nav-tabs button');
+    function filterGallery(category) {
+      const buttons = document.querySelectorAll('nav.nav-bar button');
       buttons.forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
 
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category').includes(category)) {
-          card.style.display = 'flex';
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category').includes(category)) {
+          item.style.display = 'block';
         } else {
-          card.style.display = 'none';
+          item.style.display = 'none';
         }
       });
     }
   </script>
+
 </body>
 </html>
