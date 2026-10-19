@@ -231,6 +231,9 @@
     .bg-ia {
       background: radial-gradient(circle at center, rgba(131, 24, 67, 0.85), #4c0519);
     }
+    .bg-smr {
+      background: radial-gradient(circle at center, rgba(180, 83, 9, 0.85), #451a03);
+    }
 
     .visible-title {
       position: absolute;
@@ -304,6 +307,7 @@
       padding: 0.55rem 1.1rem;
       border-radius: 4px;
       text-decoration: none;
+      transition: background 0.2s;
     }
     .overlay-info a.action-btn:hover {
       background: #ffffff;
@@ -407,14 +411,14 @@
       </div>
     </div>
 
-    <h2 class="section-title">🖼️ Galería Visual e Interactiva de Proyectos</h2>
+    <h2 class="section-title">🖼️ Galería Visual e Interactiva de Proyectos y Títulos</h2>
 
     <nav class="nav-bar">
       <button class="active" onclick="filterGallery('all')">Todos</button>
       <button onclick="filterGallery('redes')">Redes & Routing</button>
       <button onclick="filterGallery('seguridad')">Ciberseguridad</button>
       <button onclick="filterGallery('sistemas')">Sistemas</button>
-      <button onclick="filterGallery('certificaciones')">Acreditaciones</button>
+      <button onclick="filterGallery('certificaciones')">Acreditaciones y Títulos</button>
     </nav>
 
     <main class="gallery-container" id="gallery">
@@ -488,15 +492,15 @@
         <div class="item-bg bg-cisco"></div>
         <div class="visible-title">Acreditaciones Cisco NetAcad</div>
         <div class="overlay-info">
-          <span class="category-tag">Certificaciones</span>
+          <span class="category-tag">Certificaciones Oficiales</span>
           <h2>Cisco Networking Academy</h2>
-          <p>Acreditaciones oficiales en Ethical Hacker, Endpoint Security, Network Defense, Conceptos Básicos de Redes e Introducción a Packet Tracer.</p>
+          <p>Acreditaciones en Ethical Hacker, Endpoint Security, Network Defense, Redes e Introducción a Packet Tracer.</p>
           <div class="tech-tags">
             <span>Ethical Hacker</span>
             <span>Endpoint Security</span>
             <span>NetAcad</span>
           </div>
-          <a href="https://github.com/angellealdigitech-design" class="action-btn">Credenciales</a>
+          <a href="CERTIFICADOR/" target="_blank" class="action-btn">Ver Certificados (Carpeta)</a>
         </div>
       </article>
 
@@ -506,12 +510,28 @@
         <div class="overlay-info">
           <span class="category-tag">Formación Continua</span>
           <h2>Agentes IA & Automatización</h2>
-          <p>Certificación en desarrollo y despliegue de agentes inteligentes, optimización de tareas operativas y herramientas generativas en BIG School.</p>
+          <p>Capacitación en desarrollo y despliegue de agentes inteligentes, optimización de tareas operativas y herramientas generativas en BIG School.</p>
           <div class="tech-tags">
             <span>Agentes IA</span>
             <span>Automatización</span>
           </div>
-          <a href="https://github.com/angellealdigitech-design" class="action-btn">Certificado</a>
+          <a href="CERTIFICADOR/" target="_blank" class="action-btn">Ver Certificado</a>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="certificaciones sistemas">
+        <div class="item-bg bg-smr"></div>
+        <div class="visible-title">Técnico Oficial SMR</div>
+        <div class="overlay-info">
+          <span class="category-tag">Titulación Oficial</span>
+          <h2>Técnico en SMR (2023-2025)</h2>
+          <p>Título de Grado Medio en Sistemas Microinformáticos y Redes con formación práctica en soporte técnico, montaje y configuración.</p>
+          <div class="tech-tags">
+            <span>SMR</span>
+            <span>Hardware</span>
+            <span>Montaje & Redes</span>
+          </div>
+          <a href="CERTIFICADOR/" target="_blank" class="action-btn">Ver Documento</a>
         </div>
       </article>
 
