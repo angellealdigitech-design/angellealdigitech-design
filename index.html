@@ -242,6 +242,7 @@
       line-height: 1.65;
     }
 
+    /* COMPETENCIAS INTERACTIVAS */
     .subjects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -254,40 +255,83 @@
       border-radius: var(--radius-md);
       padding: 1.5rem;
       backdrop-filter: blur(12px);
+      transition: all 0.25s ease;
+    }
+
+    .subject-card:hover {
+      border-color: var(--border-focus);
     }
 
     .subject-card h3 {
       font-size: 1.05rem;
       font-weight: 600;
-      margin-bottom: 0.95rem;
+      margin-bottom: 0.5rem;
       color: var(--text-bright);
     }
 
-    .subject-card ul {
+    .subject-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    details.subject-details {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 0.8rem;
+      cursor: pointer;
+    }
+
+    details.subject-details summary {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    details.subject-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.subject-details summary::after {
+      content: "▾";
+      font-size: 0.9rem;
+      transition: transform 0.2s;
+    }
+
+    details.subject-details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    details.subject-details ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.6rem;
+      margin-top: 0.9rem;
     }
 
-    .subject-card li {
-      font-size: 0.88rem;
+    details.subject-details li {
+      font-size: 0.85rem;
       color: var(--text-muted);
       position: relative;
-      padding-left: 1.25rem;
+      padding-left: 1.2rem;
       line-height: 1.55;
     }
 
-    .subject-card li::before {
-      content: "•";
+    details.subject-details li::before {
+      content: "▹";
       position: absolute;
       left: 0;
       color: var(--primary);
-      font-size: 1.1rem;
-      line-height: 1.2;
+      font-size: 0.9rem;
     }
 
-    .subject-card li strong {
+    details.subject-details li strong {
       color: var(--text-main);
     }
 
@@ -511,7 +555,7 @@
       <h1>Ángel Leal Delgado</h1>
       <div class="subtitle">Técnico SMR &bull; Estudiante de 2.º año ASIR en DIGITECH (Madrid)</div>
       <p class="bio">
-        Portafolio técnico con prácticas de sistemas, laboratorios de infraestructura y certificaciones oficiales.
+        Portafolio técnico de administración de sistemas, infraestructura de red corporativa y laboratorios prácticos.
       </p>
       
       <div class="contact-nav">
@@ -564,63 +608,99 @@
       </div>
     </div>
 
+    <!-- COMPETENCIAS DESPLEGABLES -->
     <div class="section-header">
       <h2>Competencias Aplicadas en ASIR</h2>
-      <span class="tag">FORMACIÓN</span>
+      <span class="tag">MÓDULOS TÉCNICOS</span>
     </div>
 
     <div class="subjects-grid">
+
       <div class="subject-card">
         <h3>🌐 Planificación y Administración de Redes</h3>
-        <ul>
-          <li><strong>Topologías LAN/WAN:</strong> Diseño sobre Packet Tracer con cálculo VLSM en IPv4 e IPv6[cite: 7].</li>
-          <li><strong>Switching Avanzado:</strong> Segmentación por VLANs, enlaces troncales y enrutamiento inter-VLAN[cite: 7].</li>
-          <li><strong>Enrutamiento:</strong> Tablas estáticas, rutas por políticas y protocolos dinámicos.</li>
-        </ul>
+        <p class="subject-desc">Diseño lógico y físico de redes, switching avanzado, direccionamiento eficiente y VoIP.</p>
+        <details class="subject-details">
+          <summary>Ver temario aplicado y proyectos</summary>
+          <ul>
+            <li><strong>Subnetting VLSM:</strong> Segmentación óptima de redes IPv4 y cálculo de prefijos IPv6 sin desperdicio de hosts[cite: 7].</li>
+            <li><strong>Switching L2/L3:</strong> Configuración de VLANs (802.1Q), enlaces Trunk, Spanning Tree Protocol (STP) y routing inter-VLAN[cite: 7].</li>
+            <li><strong>Telefonía IP:</strong> Configuración de CallManager Express (CME) y asignación de extensiones sobre routers Cisco[cite: 7].</li>
+            <li><strong>Laboratorio clave:</strong> Red Corporativa TecnoSys para 120 puestos[cite: 7].</li>
+          </ul>
+        </details>
       </div>
 
       <div class="subject-card">
         <h3>🛡️ Seguridad y Alta Disponibilidad</h3>
-        <ul>
-          <li><strong>Seguridad Perimetral:</strong> Despliegue de túneles VPN y filtrado exhaustivo por ACLs[cite: 7].</li>
-          <li><strong>Auditoría de Red:</strong> Monitorización de paquetes, diagnóstico de anomalías e inspección de tráfico[cite: 1].</li>
-          <li><strong>Continuidad de Negocio:</strong> Configuraciones RAID, políticas de backup y tolerancia a fallos[cite: 1].</li>
-        </ul>
+        <p class="subject-desc">Bastionado de infraestructura perimetral, túneles seguros y preservación de la información.</p>
+        <details class="subject-details">
+          <summary>Ver temario aplicado y proyectos</summary>
+          <ul>
+            <li><strong>Filtrado Perimetral:</strong> Implementación de ACLs estándar y extendidas para control estricto de tráfico[cite: 7].</li>
+            <li><strong>Comunicaciones Seguras:</strong> Despliegue de túneles VPN IPsec punto a punto entre sedes remotas[cite: 7].</li>
+            <li><strong>Auditoría & Análisis:</strong> Inspección forense de tráfico con Wireshark y detección de intrusiones en red[cite: 1].</li>
+            <li><strong>Tolerancia a Fallos:</strong> Implementación de arreglos RAID, snapshotting y políticas de copia 3-2-1[cite: 1].</li>
+          </ul>
+        </details>
       </div>
 
       <div class="subject-card">
         <h3>🖥️ Administración de Sistemas</h3>
-        <ul>
-          <li><strong>Linux Server:</strong> Permisos avanzados, gestión de almacenamiento LVM y scripts en Bash[cite: 1].</li>
-          <li><strong>Windows Server:</strong> Despliegue de dominio Active Directory, estructura OUs y directivas GPO[cite: 1].</li>
-        </ul>
+        <p class="subject-desc">Gestión integral de servidores corporativos en entornos heterogéneos Linux y Windows Server.</p>
+        <details class="subject-details">
+          <summary>Ver temario aplicado y proyectos</summary>
+          <ul>
+            <li><strong>Active Directory Domain Services:</strong> Bosques, dominios, árboles, OUs, roles FSMO y directivas de grupo (GPOs)[cite: 1].</li>
+            <li><strong>Linux Server CLI:</strong> Gestión de permisos POSIX/ACLs, almacenamiento lógico LVM, cron jobs y scripting Bash[cite: 1].</li>
+            <li><strong>Administración Remota:</strong> Servidores SSH con autenticación por par de claves y escritorios remotos XRDP/RDP[cite: 7].</li>
+            <li><strong>Virtualización:</strong> Aprovisionamiento y parametrización EFI con VBoxManage y VMware ESXi[cite: 7].</li>
+          </ul>
+        </details>
       </div>
 
       <div class="subject-card">
         <h3>🌍 Servicios de Red e Internet</h3>
-        <ul>
-          <li><strong>Infraestructura Base:</strong> Servidores DHCP con reservas y resolución de nombres DNS Bind9[cite: 1].</li>
-          <li><strong>Servidores Seguros:</strong> Hardening de servidores Web (Apache/Nginx), SSH y servicios multimedia[cite: 1].</li>
-        </ul>
+        <p class="subject-desc">Implementación y mantenimiento de los servicios esenciales de infraestructura corporativa.</p>
+        <details class="subject-details">
+          <summary>Ver temario aplicado y proyectos</summary>
+          <ul>
+            <li><strong>Servidor de Nombres (BIND9):</strong> Configuración de zonas directas/inversas y transferencias de zona maestro-esclavo[cite: 7].</li>
+            <li><strong>Asignación Dinámica:</strong> Servidores DHCP con exclusiones, ámbitos múltiples y reservas por dirección MAC[cite: 1].</li>
+            <li><strong>Servidores Web y Streaming:</strong> Despliegue de servidores Apache/Nginx y plataformas de audio Icecast2/Ices2[cite: 1, 7].</li>
+            <li><strong>Transferencia de Archivos:</strong> Despliegue de servidores seguros SFTP/VSFTPD con usuarios enjaulados[cite: 1].</li>
+          </ul>
+        </details>
       </div>
 
       <div class="subject-card">
         <h3>🗄️ Gestión de Bases de Datos</h3>
-        <ul>
-          <li><strong>Modelado Relacional:</strong> Normalización, integridad referencial y diagramas E/R[cite: 1].</li>
-          <li><strong>MySQL / MariaDB:</strong> Consultas complejas DDL/DML, gestión de privilegios y backups[cite: 1].</li>
-        </ul>
+        <p class="subject-desc">Diseño, normalización y explotación de sistemas gestores de bases de datos relacionales.</p>
+        <details class="subject-details">
+          <summary>Ver temario aplicado y proyectos</summary>
+          <ul>
+            <li><strong>Modelado de Datos:</strong> Diagramas entidad-relación (E/R), transformación al modelo relacional y reglas de normalización[cite: 1].</li>
+            <li><strong>Lenguaje SQL:</strong> Sentencias DDL (definición), DML (manipulación), subconsultas complejas y joins[cite: 1].</li>
+            <li><strong>Administración MySQL / MariaDB:</strong> Gestión de roles, permisos a nivel de tabla, integridad referencial y backups lógicos[cite: 1].</li>
+          </ul>
+        </details>
       </div>
 
       <div class="subject-card">
         <h3>☁️ Implantación de Aplicaciones Web</h3>
-        <ul>
-          <li><strong>Pilas LAMP:</strong> Puesta en marcha de entornos Linux + Apache + MariaDB + PHP[cite: 1].</li>
-          <li><strong>Sistemas CMS:</strong> Instalación de gestores de contenidos y resolución de incidencias web[cite: 1].</li>
-        </ul>
+        <p class="subject-desc">Puesta en producción de arquitecturas multicapa y soporte para aplicaciones corporativas.</p>
+        <details class="subject-details">
+          <summary>Ver temario aplicado y proyectos</summary>
+          <ul>
+            <li><strong>Pilas LAMP:</strong> Integración de Linux, Apache2, MariaDB y módulos PHP con extensiones requeridas[cite: 1].</li>
+            <li><strong>Gestores de Contenidos:</strong> Instalación, aseguramiento y migración de plataformas CMS sobre bases de datos dedicadas[cite: 1].</li>
+            <li><strong>Depuración:</strong> Análisis de logs de acceso (`access.log`) y errores (`error.log`) para resolución de incidencias HTTP[cite: 1].</li>
+          </ul>
+        </details>
       </div>
+
     </div>
 
+    <!-- PRÁCTICAS TÉCNICAS -->
     <div class="section-header">
       <h2>Prácticas Técnicas y Laboratorios</h2>
       <span class="tag">PRÁCTICAS</span>
@@ -780,6 +860,7 @@
 
     </main>
 
+    <!-- CERTIFICADOS OFICIALES -->
     <div class="section-header">
       <h2>Acreditaciones y Certificaciones Oficiales</h2>
       <span class="tag">CERTIFICADOS</span>
@@ -904,7 +985,7 @@
           </div>
         </div>
         <div class="btn-actions">
-          <a href="CERTIFICADOR/Certificado-Angel-Leal-jag7obhh.pdf" target="_blank" class="primary-btn">📄 Ver Certificado Oficial (PDF)</a>
+          <a href="CERTIFICADOR/Certificado-Angel-Leal-jag7obhh.pdf" target="_blank" class="primary-btn">📄 De 0 a Agentes (PDF)</a>
         </div>
       </article>
 
