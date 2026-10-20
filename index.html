@@ -101,15 +101,33 @@
       font-size: 1.15rem;
       color: #93c5fd;
       font-weight: 600;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
     }
 
-    .bio {
-      max-width: 750px;
-      margin: 0 auto 2.2rem;
+    .bio-container {
+      max-width: 820px;
+      margin: 0 auto 2.4rem;
+      text-align: left;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.6rem 1.8rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .bio-container p {
       color: var(--text-muted);
-      font-size: 1.02rem;
+      font-size: 0.98rem;
       line-height: 1.75;
+      margin-bottom: 0.9rem;
+    }
+
+    .bio-container p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-container strong {
+      color: var(--text-bright);
     }
 
     .contact-nav {
@@ -553,9 +571,16 @@
       </div>
       <h1>Ángel Leal Delgado</h1>
       <div class="subtitle">Técnico SMR &bull; Estudiante de 2.º año ASIR en DIGITECH (Madrid)</div>
-      <p class="bio">
-        Portafolio técnico de administración de sistemas, infraestructura de red corporativa y laboratorios prácticos.
-      </p>
+      
+      <!-- PRESENTACIÓN PROFESIONAL -->
+      <div class="bio-container">
+        <p>
+          ¡Hola! Soy <strong>Ángel Leal</strong>, técnico en Sistemas Microinformáticos y Redes (SMR) y estudiante de segundo año del Grado Superior de <strong>Administración de Sistemas Informáticos en Red (ASIR)</strong>. Mi foco principal está orientado a la <strong>ciberseguridad defensiva, el bastionado de servidores y la arquitectura de redes</strong>: configuración de túneles VPN, políticas de control de acceso (ACLs), segmentación VLAN y monitorización forense con Wireshark[cite: 1].
+        </p>
+        <p>
+          De manera complementaria a mi perfil tecnológico, cuento con la titulación oficial de <strong>Socorrista Acuático en Piscinas e Instalaciones Acuáticas con Soporte Vital Básico y DESA (80h)</strong>[cite: 7, 8]. Esta formación me aporta habilidades transferibles clave en el ámbito de la ingeniería de sistemas: <strong>alta capacidad de concentración, prevención de riesgos, templanza bajo escenarios de estrés crítico y rápida capacidad de resolución</strong>.
+        </p>
+      </div>
       
       <div class="contact-nav">
         <a href="mailto:angellealdo.1@gmail.com" class="contact-pill">✉️ angellealdo.1@gmail.com</a>
@@ -580,8 +605,8 @@
         <span class="label">Credenciales Oficiales</span>
       </div>
       <div class="metric-card">
-        <span class="num">Prácticas</span>
-        <span class="label">Laboratorios Reales</span>
+        <span class="num">Socorrista & DESA</span>
+        <span class="label">Emergencias Acuáticas</span>
       </div>
     </div>
 
@@ -593,22 +618,23 @@
     <div class="skills-grid">
       <div class="skill-box">
         <h3>🐧 Sistemas Operativos</h3>
-        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS.</p>
+        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS[cite: 1].</p>
       </div>
       <div class="skill-box">
         <h3>🌐 Redes & Routing</h3>
-        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark.</p>
+        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark[cite: 1].</p>
       </div>
       <div class="skill-box">
         <h3>🛡️ Ciberseguridad</h3>
-        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad.</p>
+        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad[cite: 1].</p>
       </div>
       <div class="skill-box">
         <h3>⚡ Servicios e Infraestructura</h3>
-        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, DNS Bind9, streaming con Icecast2 y virtualización con VMware y VirtualBox.</p>
+        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, DNS Bind9, streaming con Icecast2 y virtualización con VMware y VirtualBox[cite: 1].</p>
       </div>
     </div>
 
+    <!-- COMPETENCIAS DESPLEGABLES -->
     <div class="section-header">
       <h2>Competencias Aplicadas en ASIR</h2>
       <span class="tag">MÓDULOS TÉCNICOS</span>
@@ -638,8 +664,8 @@
           <ul>
             <li><strong>Filtrado Perimetral:</strong> Implementación de ACLs estándar y extendidas para control estricto de tráfico.</li>
             <li><strong>Comunicaciones Seguras:</strong> Despliegue de túneles VPN IPsec punto a punto entre sedes remotas.</li>
-            <li><strong>Auditoría & Análisis:</strong> Inspección forense de tráfico con Wireshark y detección de intrusiones en red.</li>
-            <li><strong>Tolerancia a Fallos:</strong> Implementación de arreglos RAID, snapshotting y políticas de copia 3-2-1.</li>
+            <li><strong>Auditoría & Análisis:</strong> Inspección forense de tráfico con Wireshark y detección de intrusiones en red[cite: 1].</li>
+            <li><strong>Tolerancia a Fallos:</strong> Implementación de arreglos RAID, snapshotting y políticas de copia 3-2-1[cite: 1].</li>
           </ul>
         </details>
       </div>
@@ -650,8 +676,8 @@
         <details class="subject-details">
           <summary>Ver temario aplicado y proyectos</summary>
           <ul>
-            <li><strong>Active Directory Domain Services:</strong> Bosques, dominios, árboles, OUs, roles FSMO y directivas de grupo (GPOs).</li>
-            <li><strong>Linux Server CLI:</strong> Gestión de permisos POSIX/ACLs, almacenamiento lógico LVM, cron jobs y scripting Bash.</li>
+            <li><strong>Active Directory Domain Services:</strong> Bosques, dominios, árboles, OUs, roles FSMO y directivas de grupo (GPOs)[cite: 1].</li>
+            <li><strong>Linux Server CLI:</strong> Gestión de permisos POSIX/ACLs, almacenamiento lógico LVM, cron jobs y scripting Bash[cite: 1].</li>
             <li><strong>Administración Remota:</strong> Servidores SSH con autenticación por par de claves y escritorios remotos XRDP/RDP.</li>
             <li><strong>Virtualización:</strong> Aprovisionamiento y parametrización EFI con VBoxManage y VMware ESXi.</li>
           </ul>
@@ -665,9 +691,9 @@
           <summary>Ver temario aplicado y proyectos</summary>
           <ul>
             <li><strong>Servidor de Nombres (BIND9):</strong> Configuración de zonas directas/inversas y transferencias de zona maestro-esclavo.</li>
-            <li><strong>Asignación Dinámica:</strong> Servidores DHCP con exclusiones, ámbitos múltiples y reservas por dirección MAC.</li>
-            <li><strong>Servidores Web y Streaming:</strong> Despliegue de servidores Apache/Nginx y plataformas de audio Icecast2/Ices2.</li>
-            <li><strong>Transferencia de Archivos:</strong> Despliegue de servidores seguros SFTP/VSFTPD con usuarios enjaulados.</li>
+            <li><strong>Asignación Dinámica:</strong> Servidores DHCP con exclusiones, ámbitos múltiples y reservas por dirección MAC[cite: 1].</li>
+            <li><strong>Servidores Web y Streaming:</strong> Despliegue de servidores Apache/Nginx y plataformas de audio Icecast2/Ices2[cite: 1].</li>
+            <li><strong>Transferencia de Archivos:</strong> Despliegue de servidores seguros SFTP/VSFTPD con usuarios enjaulados[cite: 1].</li>
           </ul>
         </details>
       </div>
@@ -678,9 +704,9 @@
         <details class="subject-details">
           <summary>Ver temario aplicado y proyectos</summary>
           <ul>
-            <li><strong>Modelado de Datos:</strong> Diagramas entidad-relación (E/R), transformación al modelo relacional y reglas de normalización.</li>
-            <li><strong>Lenguaje SQL:</strong> Sentencias DDL (definición), DML (manipulación), subconsultas complejas y joins.</li>
-            <li><strong>Administración MySQL / MariaDB:</strong> Gestión de roles, permisos a nivel de tabla, integridad referencial y backups lógicos.</li>
+            <li><strong>Modelado de Datos:</strong> Diagramas entidad-relación (E/R), transformación al modelo relacional y reglas de normalización[cite: 1].</li>
+            <li><strong>Lenguaje SQL:</strong> Sentencias DDL (definición), DML (manipulación), subconsultas complejas y joins[cite: 1].</li>
+            <li><strong>Administración MySQL / MariaDB:</strong> Gestión de roles, permisos a nivel de tabla, integridad referencial y backups lógicos[cite: 1].</li>
           </ul>
         </details>
       </div>
@@ -691,15 +717,16 @@
         <details class="subject-details">
           <summary>Ver temario aplicado y proyectos</summary>
           <ul>
-            <li><strong>Pilas LAMP:</strong> Integración de Linux, Apache2, MariaDB y módulos PHP con extensiones requeridas.</li>
-            <li><strong>Gestores de Contenidos:</strong> Instalación, aseguramiento y migración de plataformas CMS sobre bases de datos dedicadas.</li>
-            <li><strong>Depuración:</strong> Análisis de logs de acceso (`access.log`) y errores (`error.log`) para resolución de incidencias HTTP.</li>
+            <li><strong>Pilas LAMP:</strong> Integración de Linux, Apache2, MariaDB y módulos PHP con extensiones requeridas[cite: 1].</li>
+            <li><strong>Gestores de Contenidos:</strong> Instalación, aseguramiento y migración de plataformas CMS sobre bases de datos dedicadas[cite: 1].</li>
+            <li><strong>Depuración:</strong> Análisis de logs de acceso (`access.log`) y errores (`error.log`) para resolución de incidencias HTTP[cite: 1].</li>
           </ul>
         </details>
       </div>
 
     </div>
 
+    <!-- PRÁCTICAS TÉCNICAS -->
     <div class="section-header">
       <h2>Prácticas Técnicas y Laboratorios</h2>
       <span class="tag">PRÁCTICAS</span>
@@ -859,6 +886,7 @@
 
     </main>
 
+    <!-- CERTIFICADOS OFICIALES -->
     <div class="section-header">
       <h2>Acreditaciones y Certificaciones Oficiales</h2>
       <span class="tag">CERTIFICADOS</span>
@@ -869,6 +897,7 @@
       <button class="filter-btn" onclick="filterGallery('cisco', 'cert-grid')">Cisco NetAcad</button>
       <button class="filter-btn" onclick="filterGallery('ciberseguridad', 'cert-grid')">Ciberseguridad</button>
       <button class="filter-btn" onclick="filterGallery('ia', 'cert-grid')">Inteligencia Artificial</button>
+      <button class="filter-btn" onclick="filterGallery('emergencias', 'cert-grid')">Socorrismo & Salud</button>
     </div>
 
     <main class="cards-grid" id="cert-grid">
@@ -956,7 +985,7 @@
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Exploración de IoT con Packet Tracer</h3>
-          <p>Interconexión, monitorización y configuración de dispositivos y sensores inteligentes en entornos de Internet de las Cosas[cite: 6].</p>
+          <p>Interconexión, monitorización y configuración de dispositivos y sensores inteligentes en entornos de Internet de las Cosas.</p>
           <div class="tech-chips">
             <span>IoT</span>
             <span>Packet Tracer</span>
@@ -983,7 +1012,7 @@
           </div>
         </div>
         <div class="btn-actions">
-          <a href="CERTIFICADOR/Certificado-Angel-Leal-jag7obhh.pdf" target="_blank" class="primary-btn">📄 Ver Certificado Oficial (PDF)</a>
+          <a href="CERTIFICADOR/Certificado-Angel-Leal-jag7obhh.pdf" target="_blank" class="primary-btn">📄 De 0 a Agentes (PDF)</a>
         </div>
       </article>
 
@@ -994,7 +1023,7 @@
         <div class="card-top">
           <span class="issuer">BIG School</span>
           <h3>Iniciación a la IA: El Nuevo ChatGPT</h3>
-          <p>Fundamentos y aplicación práctica de modelos generativos, prompting y optimización de productividad técnica[cite: 7].</p>
+          <p>Fundamentos y aplicación práctica de modelos generativos, prompting y optimización de productividad técnica.</p>
           <div class="tech-chips">
             <span>ChatGPT</span>
             <span>Modelos Generativos</span>
@@ -1022,6 +1051,27 @@
         </div>
         <div class="btn-actions">
           <a href="CERTIFICADOR/Introduction_to_Greenhouse_Gas_Accounting_for_IT_certificate_romadefe-digitechfp-com_90f21871-7af7-41fe-932d-a7d6e2fc43be.pdf" target="_blank" class="primary-btn">📄 Ver Certificado Oficial (PDF)</a>
+        </div>
+      </article>
+
+      <!-- TARJETA SOCORRISMO -->
+      <article class="item-card" data-category="emergencias">
+        <div class="pdf-preview-box">
+          <iframe src="CERTIFICADOR/Titulo_7471.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+        </div>
+        <div class="card-top">
+          <span class="issuer">ESEP Formación - Grupo4Mate</span>
+          <h3>Socorrista Acuático & Soporte Vital (DESA)</h3>
+          <p>Acreditación oficial para piscinas e instalaciones acuáticas en la Comunidad de Madrid (80h). Formación en primeros auxilios, maniobras SVB y desfibrilador externo[cite: 7, 8].</p>
+          <div class="tech-chips">
+            <span>Socorrismo Acuático</span>
+            <span>DESA</span>
+            <span>Soporte Vital Básico</span>
+            <span>Emergencias</span>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/Titulo_7471.pdf" target="_blank" class="primary-btn">📄 Ver Título de Socorrista (PDF)</a>
         </div>
       </article>
 
