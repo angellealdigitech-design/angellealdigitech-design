@@ -44,7 +44,6 @@
       margin: 0 auto;
     }
 
-    /* HEADER HERO */
     header.hero {
       padding: 4rem 1rem 3rem;
       text-align: center;
@@ -96,7 +95,7 @@
     }
 
     .bio {
-      max-width: 750px;
+      max-width: 780px;
       margin: 0 auto 2rem;
       color: var(--text-muted);
       font-size: 1rem;
@@ -133,40 +132,6 @@
       box-shadow: 0 4px 15px var(--primary-glow);
     }
 
-    /* METRICAS */
-    .metrics-bar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin: 2.5rem 0 3.5rem;
-    }
-
-    .metric-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.2rem;
-      text-align: center;
-      backdrop-filter: blur(10px);
-    }
-
-    .metric-card span.num {
-      display: block;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--primary);
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .metric-card span.label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-    }
-
-    /* TITULOS DE SECCION */
     .section-header {
       display: flex;
       align-items: center;
@@ -191,78 +156,13 @@
       border-radius: 4px;
     }
 
-    /* HABILIDADES GRID */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .skill-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.4rem;
-      transition: all 0.25s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .skill-box:hover {
-      border-color: var(--border-accent);
-      transform: translateY(-2px);
-    }
-
-    .skill-box h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .skill-box p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* FILTROS */
-    .filter-bar {
-      display: flex;
-      justify-content: center;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin: 1.8rem 0;
-    }
-
-    .filter-btn {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      font-family: inherit;
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 0.5rem 1.1rem;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--primary);
-      color: #090d16;
-      border-color: var(--primary);
-      box-shadow: 0 2px 10px var(--primary-glow);
-    }
-
-    /* CARDS */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.4rem;
     }
 
-    .cert-card {
+    .item-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -275,7 +175,7 @@
       position: relative;
     }
 
-    .cert-card::before {
+    .item-card::before {
       content: "";
       position: absolute;
       top: 0;
@@ -287,13 +187,13 @@
       transition: opacity 0.25s;
     }
 
-    .cert-card:hover {
+    .item-card:hover {
       border-color: var(--border-accent);
       transform: translateY(-3px);
       box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
     }
 
-    .cert-card:hover::before {
+    .item-card:hover::before {
       opacity: 1;
     }
 
@@ -312,7 +212,7 @@
       display: block;
     }
 
-    .cert-card h3 {
+    .item-card h3 {
       font-size: 1.18rem;
       font-weight: 700;
       color: #ffffff;
@@ -320,7 +220,7 @@
       line-height: 1.35;
     }
 
-    .cert-card p {
+    .item-card p {
       font-size: 0.86rem;
       color: var(--text-muted);
       line-height: 1.6;
@@ -408,7 +308,7 @@
       <h1>Ángel Leal Delgado</h1>
       <div class="subtitle">Técnico SMR &bull; Estudiante de 2.º año ASIR en DIGITECH (Madrid)</div>
       <p class="bio">
-        En búsqueda activa de prácticas curriculares. Perfil enfocado en la administración de redes informáticas, seguridad en comunicaciones y despliegue de soluciones tecnológicas.
+        Portafolio con mis prácticas técnicas realizadas y mis certificaciones oficiales.
       </p>
       
       <div class="contact-nav">
@@ -418,70 +318,147 @@
       </div>
     </header>
 
-    <div class="metrics-bar">
-      <div class="metric-card">
-        <span class="num">2.º ASIR</span>
-        <span class="label">Ciclo Superior Activo</span>
-      </div>
-      <div class="metric-card">
-        <span class="num">SMR</span>
-        <span class="label">Técnico Oficial</span>
-      </div>
-      <div class="metric-card">
-        <span class="num">Cisco NetAcad</span>
-        <span class="label">4 Credenciales Verificadas</span>
-      </div>
-      <div class="metric-card">
-        <span class="num">BIG School</span>
-        <span class="label">Certificaciones en IA</span>
-      </div>
+    <div class="section-header">
+      <h2>Prácticas Técnicas</h2>
+      <span class="tag">PRÁCTICAS</span>
     </div>
+
+    <section class="cards-grid">
+
+      <article class="item-card">
+        <div class="card-top">
+          <span class="issuer">Práctica de Redes</span>
+          <h3>Red Corporativa TecnoSys</h3>
+          <p>Diseño de red corporativa para 120 puestos con 8 VLANs, cálculo de subredes VLSM, enrutamiento inter-VLAN con switch multicapa y telefonía IP con Cisco 2811.</p>
+          <div class="tech-chips">
+            <span>Packet Tracer (.PKT)</span>
+            <span>VLANs & VLSM</span>
+            <span>VoIP / CME</span>
+            <span>Switch L3</span>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/TecnoSys_Memoria.pdf" target="_blank" class="primary-btn">📄 Ver Práctica (PDF)</a>
+          <a href="CERTIFICADOR/TecnoSys_Red.pkt" download class="secondary-btn">💾 Descargar Simulación (.PKT)</a>
+        </div>
+      </article>
+
+      <article class="item-card">
+        <div class="card-top">
+          <span class="issuer">Práctica de Redes</span>
+          <h3>Despliegue de VPN & ACLs</h3>
+          <p>Configuración de túneles VPN punto a punto entre sedes y aplicación de Listas de Control de Acceso (ACLs) estándar y extendidas para filtrado de tráfico.</p>
+          <div class="tech-chips">
+            <span>Cisco IOS</span>
+            <span>VPN Tunnel</span>
+            <span>ACLs</span>
+            <span>Packet Tracer (.PKT)</span>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="VPN-LISTAS%20DE%20CONTROL%20DE%20ACCESO_ANGEL_LEAL%20(2).pkt" download class="primary-btn">💾 Descargar Archivo .PKT</a>
+        </div>
+      </article>
+
+      <article class="item-card">
+        <div class="card-top">
+          <span class="issuer">Práctica de Servicios</span>
+          <h3>Servidor DNS con BIND9</h3>
+          <p>Instalación y configuración de BIND9 en Ubuntu Server con zonas de resolución directa e inversa, y pruebas de transferencia de zona entre servidores.</p>
+          <div class="tech-chips">
+            <span>Ubuntu Server</span>
+            <span>BIND9</span>
+            <span>DNS Reverso</span>
+            <span>Zonas DNS</span>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/Practica_DNS_BIND9.pdf" target="_blank" class="primary-btn">📄 Ver Práctica (PDF)</a>
+        </div>
+      </article>
+
+      <article class="item-card">
+        <div class="card-top">
+          <span class="issuer">Práctica de Sistemas</span>
+          <h3>Gestión de Acceso Remoto</h3>
+          <p>Acceso y administración remota en consola mediante SSH/PuTTY y entorno gráfico con RDP (XRDP y Remmina) conectando máquinas Linux y Windows.</p>
+          <div class="tech-chips">
+            <span>SSH / PuTTY</span>
+            <span>RDP / XRDP</span>
+            <span>Remmina</span>
+            <span>Seguridad</span>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/Practica_Acceso_Remoto.pdf" target="_blank" class="primary-btn">📄 Ver Práctica (PDF)</a>
+        </div>
+      </article>
+
+      <article class="item-card">
+        <div class="card-top">
+          <span class="issuer">Práctica de Servicios</span>
+          <h3>Servidor de Streaming (Icecast2)</h3>
+          <p>Montaje de servidor de streaming de audio en Ubuntu Server con Icecast2 e Ices2, transcodificando pistas de audio a OGG mediante FFmpeg.</p>
+          <div class="tech-chips">
+            <span>Icecast2</span>
+            <span>Ices2</span>
+            <span>FFmpeg</span>
+            <span>Audio Streaming</span>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/Practica_Servidor_Audio.pdf" target="_blank" class="primary-btn">📄 Ver Práctica (PDF)</a>
+        </div>
+      </article>
+
+      <article class="item-card">
+        <div class="card-top">
+          <span class="issuer">Práctica de Robótica</span>
+          <h3>Robot Autónomo ASTI (Arduino)</h3>
+          <p>Diseño y montaje de robot móvil con Arduino Uno, sensor de distancia ultrasónico HC-SR04 e infrarrojos TCRT5000 para navegación siguelíneas.</p>
+          <div class="tech-chips">
+            <span>Arduino</span>
+            <span>Sensores Ultrasonidos</span>
+            <span>Infrarrojos</span>
+            <span>Automatización</span>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/Proyecto_Robot_ASTI.pdf" target="_blank" class="primary-btn">📄 Ver Práctica (PDF)</a>
+        </div>
+      </article>
+
+      <article class="item-card">
+        <div class="card-top">
+          <span class="issuer">Práctica de Sistemas</span>
+          <h3>Virtualización de macOS en VirtualBox</h3>
+          <p>Configuración del entorno EFI con comandos VBoxManage, particionado de almacenamiento en APFS y administración de usuarios en macOS.</p>
+          <div class="tech-chips">
+            <span>VirtualBox</span>
+            <span>VBoxManage / EFI</span>
+            <span>macOS</span>
+            <span>Sistemas Operativos</span>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/Practica_MacOS_VirtualBox.pdf" target="_blank" class="primary-btn">📄 Ver Práctica (PDF)</a>
+        </div>
+      </article>
+
+    </section>
 
     <div class="section-header">
-      <h2>Habilidades Técnicas</h2>
-      <span class="tag">COMPETENCIAS</span>
+      <h2>Certificados Oficiales</h2>
+      <span class="tag">CERTIFICADOS</span>
     </div>
 
-    <div class="skills-grid">
-      <div class="skill-box">
-        <h3>🌐 Redes y Comunicaciones</h3>
-        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, segmentación VLANs y simulación de topologías con Cisco Packet Tracer.</p>
-      </div>
-      <div class="skill-box">
-        <h3>🛡️ Ciberseguridad & VPN</h3>
-        <p>Filtrado de tráfico mediante Listas de Control de Acceso (ACLs), securización de endpoints y configuración de túneles VPN punto a punto.</p>
-      </div>
-      <div class="skill-box">
-        <h3>🤖 Inteligencia Artificial Aplicada</h3>
-        <p>Automatización de flujos de trabajo, integración de agentes inteligentes y optimización de tareas técnicas con IA.</p>
-      </div>
-      <div class="skill-box">
-        <h3>🌱 Sostenibilidad IT</h3>
-        <p>Acreditación en contabilización y gestión de la huella de carbono / emisiones de efecto invernadero en infraestructuras tecnológicas.</p>
-      </div>
-    </div>
+    <section class="cards-grid">
 
-    <div class="section-header">
-      <h2>Acreditaciones Oficiales y Proyectos</h2>
-      <span class="tag">VERIFICADOS</span>
-    </div>
-
-    <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterGallery('all')">Todos</button>
-      <button class="filter-btn" onclick="filterGallery('cisco')">Cisco NetAcad</button>
-      <button class="filter-btn" onclick="filterGallery('seguridad')">Ciberseguridad</button>
-      <button class="filter-btn" onclick="filterGallery('ia')">Inteligencia Artificial</button>
-      <button class="filter-btn" onclick="filterGallery('laboratorio')">Laboratorios (.PKT)</button>
-    </div>
-
-    <main class="cards-grid" id="gallery">
-
-      <!-- Cisco Ethical Hacker -->
-      <article class="cert-card" data-category="cisco seguridad">
+      <article class="item-card">
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Ethical Hacker</h3>
-          <p>Acreditación técnica en metodología de pentesting, escaneo estructurado de vulnerabilidades, explotación en redes cableadas/inalámbricas e informes de seguridad.</p>
+          <p>Metodología de pentesting, escaneo de vulnerabilidades, explotación en redes cableadas/inalámbricas y redacción de informes de auditoría.</p>
           <div class="tech-chips">
             <span>Pentesting</span>
             <span>Vulnerabilidades</span>
@@ -493,12 +470,11 @@
         </div>
       </article>
 
-      <!-- Cisco Endpoint Security -->
-      <article class="cert-card" data-category="cisco seguridad">
+      <article class="item-card">
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Endpoint Security</h3>
-          <p>Mitigación de amenazas en red, detección de malware mediante análisis de capturas de tráfico y aseguramiento de terminales.</p>
+          <p>Mitigación de amenazas en red, detección de malware mediante análisis de tráfico y protección de terminales.</p>
           <div class="tech-chips">
             <span>Endpoint</span>
             <span>Malware Analysis</span>
@@ -510,15 +486,14 @@
         </div>
       </article>
 
-      <!-- Cisco Intro Cybersecurity -->
-      <article class="cert-card" data-category="cisco seguridad">
+      <article class="item-card">
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Introduction to Cybersecurity</h3>
-          <p>Fundamentos de seguridad en línea, vectores de ataque habituales y medidas de protección corporativas para infraestructura digital.</p>
+          <p>Fundamentos de ciberseguridad, vectores de ataque habituales y medidas de protección corporativas.</p>
           <div class="tech-chips">
             <span>Cybersecurity</span>
-            <span>Defensa</span>
+            <span>Defensa Perimetral</span>
             <span>NetAcad</span>
           </div>
         </div>
@@ -527,16 +502,15 @@
         </div>
       </article>
 
-      <!-- Packet Tracer & IoT -->
-      <article class="cert-card" data-category="cisco">
+      <article class="item-card">
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Packet Tracer & Ecosistemas IoT</h3>
-          <p>Acreditaciones oficiales en diseño y simulación de topologías de red en Packet Tracer e integración con dispositivos de internet de las cosas.</p>
+          <p>Simulación y diseño de topologías de red en Cisco Packet Tracer e integración con sensores IoT.</p>
           <div class="tech-chips">
             <span>Packet Tracer</span>
             <span>IoT</span>
-            <span>NetAcad</span>
+            <span>Simulación Cisco</span>
           </div>
         </div>
         <div class="btn-actions">
@@ -545,29 +519,11 @@
         </div>
       </article>
 
-      <!-- Laboratorio VPN PKT -->
-      <article class="cert-card" data-category="laboratorio seguridad">
-        <div class="card-top">
-          <span class="issuer">Laboratorio Práctico ASIR</span>
-          <h3>Despliegue de VPN & ACLs</h3>
-          <p>Topología práctica en Packet Tracer con enlaces VPN punto a punto y filtrado de paquetes mediante Listas de Control de Acceso (ACLs).</p>
-          <div class="tech-chips">
-            <span>Packet Tracer (.PKT)</span>
-            <span>Cisco IOS</span>
-            <span>VPN Tunnel</span>
-          </div>
-        </div>
-        <div class="btn-actions">
-          <a href="VPN-LISTAS%20DE%20CONTROL%20DE%20ACCESO_ANGEL_LEAL%20(2).pkt" download class="primary-btn">💾 Descargar Archivo .PKT</a>
-        </div>
-      </article>
-
-      <!-- BIG School IA -->
-      <article class="cert-card" data-category="ia">
+      <article class="item-card">
         <div class="card-top">
           <span class="issuer">BIG School</span>
           <h3>Agentes de IA & Automatización</h3>
-          <p>Capacitación técnica en aplicaciones de modelos generativos, automatización de tareas y desarrollo con agentes de inteligencia artificial.</p>
+          <p>Herramientas de inteligencia artificial aplicada, optimización de productividad y automatización con agentes autónomos.</p>
           <div class="tech-chips">
             <span>Agentes IA</span>
             <span>Automatización</span>
@@ -580,16 +536,15 @@
         </div>
       </article>
 
-      <!-- Cisco Sostenibilidad -->
-      <article class="cert-card" data-category="cisco">
+      <article class="item-card">
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Greenhouse Gas Accounting for IT</h3>
-          <p>Contabilización y gestión ambiental de centros de datos y sistemas informáticos según estándares de sostenibilidad tecnológica.</p>
+          <p>Cálculo y control de emisiones de efecto invernadero en infraestructuras informáticas y centros de datos.</p>
           <div class="tech-chips">
             <span>Green IT</span>
             <span>Sostenibilidad</span>
-            <span>NetAcad</span>
+            <span>Data Center</span>
           </div>
         </div>
         <div class="btn-actions">
@@ -597,29 +552,12 @@
         </div>
       </article>
 
-    </main>
+    </section>
 
     <footer>
       <p>Ángel Leal Delgado &bull; Técnico en Sistemas Microinformáticos y Redes &bull; Estudiante ASIR</p>
     </footer>
   </div>
-
-  <script>
-    function filterGallery(category) {
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      const items = document.querySelectorAll('.cert-card');
-      items.forEach(item => {
-        if (category === 'all' || item.getAttribute('data-category').includes(category)) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-  </script>
 
 </body>
 </html>
