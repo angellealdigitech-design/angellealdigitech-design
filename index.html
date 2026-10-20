@@ -359,6 +359,10 @@
       overflow: hidden;
       margin-bottom: 1.1rem;
       border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
 
     .pdf-preview-box iframe {
@@ -366,6 +370,34 @@
       height: 100%;
       border: none;
       pointer-events: none;
+    }
+
+    .img-preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.05) brightness(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .item-card:hover .img-preview {
+      transform: scale(1.03);
+    }
+
+    .preview-badge-overlay {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #7dd3fc;
+      font-size: 0.7rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-weight: 600;
+      backdrop-filter: blur(6px);
     }
 
     .card-top {
@@ -516,19 +548,19 @@
     <div class="skills-grid">
       <div class="skill-box">
         <h3>🐧 Sistemas Operativos</h3>
-        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS.</p>
+        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS[cite: 1].</p>
       </div>
       <div class="skill-box">
         <h3>🌐 Redes & Routing</h3>
-        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark.</p>
+        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark[cite: 1].</p>
       </div>
       <div class="skill-box">
         <h3>🛡️ Ciberseguridad</h3>
-        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad.</p>
+        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad[cite: 1].</p>
       </div>
       <div class="skill-box">
         <h3>⚡ Servicios e Infraestructura</h3>
-        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, DNS Bind9, streaming con Icecast2 y virtualización con VMware y VirtualBox.</p>
+        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, DNS Bind9, streaming con Icecast2 y virtualización con VMware y VirtualBox[cite: 1].</p>
       </div>
     </div>
 
@@ -551,40 +583,40 @@
         <h3>🛡️ Seguridad y Alta Disponibilidad</h3>
         <ul>
           <li><strong>Seguridad Perimetral:</strong> Despliegue de túneles VPN y filtrado exhaustivo por ACLs[cite: 7].</li>
-          <li><strong>Auditoría de Red:</strong> Monitorización de paquetes, diagnóstico de anomalías e inspección de tráfico.</li>
-          <li><strong>Continuidad de Negocio:</strong> Configuraciones RAID, políticas de backup y tolerancia a fallos.</li>
+          <li><strong>Auditoría de Red:</strong> Monitorización de paquetes, diagnóstico de anomalías e inspección de tráfico[cite: 1].</li>
+          <li><strong>Continuidad de Negocio:</strong> Configuraciones RAID, políticas de backup y tolerancia a fallos[cite: 1].</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>🖥️ Administración de Sistemas</h3>
         <ul>
-          <li><strong>Linux Server:</strong> Permisos avanzados, gestión de almacenamiento LVM y scripts en Bash.</li>
-          <li><strong>Windows Server:</strong> Despliegue de dominio Active Directory, estructura OUs y directivas GPO.</li>
+          <li><strong>Linux Server:</strong> Permisos avanzados, gestión de almacenamiento LVM y scripts en Bash[cite: 1].</li>
+          <li><strong>Windows Server:</strong> Despliegue de dominio Active Directory, estructura OUs y directivas GPO[cite: 1].</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>🌍 Servicios de Red e Internet</h3>
         <ul>
-          <li><strong>Infraestructura Base:</strong> Servidores DHCP con reservas y resolución de nombres DNS Bind9.</li>
-          <li><strong>Servidores Seguros:</strong> Hardening de servidores Web (Apache/Nginx), SSH y servicios multimedia.</li>
+          <li><strong>Infraestructura Base:</strong> Servidores DHCP con reservas y resolución de nombres DNS Bind9[cite: 1].</li>
+          <li><strong>Servidores Seguros:</strong> Hardening de servidores Web (Apache/Nginx), SSH y servicios multimedia[cite: 1].</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>🗄️ Gestión de Bases de Datos</h3>
         <ul>
-          <li><strong>Modelado Relacional:</strong> Normalización, integridad referencial y diagramas E/R.</li>
-          <li><strong>MySQL / MariaDB:</strong> Consultas complejas DDL/DML, gestión de privilegios y backups.</li>
+          <li><strong>Modelado Relacional:</strong> Normalización, integridad referencial y diagramas E/R[cite: 1].</li>
+          <li><strong>MySQL / MariaDB:</strong> Consultas complejas DDL/DML, gestión de privilegios y backups[cite: 1].</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>☁️ Implantación de Aplicaciones Web</h3>
         <ul>
-          <li><strong>Pilas LAMP:</strong> Puesta en marcha de entornos Linux + Apache + MariaDB + PHP.</li>
-          <li><strong>Sistemas CMS:</strong> Instalación de gestores de contenidos y resolución de incidencias web.</li>
+          <li><strong>Pilas LAMP:</strong> Puesta en marcha de entornos Linux + Apache + MariaDB + PHP[cite: 1].</li>
+          <li><strong>Sistemas CMS:</strong> Instalación de gestores de contenidos y resolución de incidencias web[cite: 1].</li>
         </ul>
       </div>
     </div>
@@ -627,7 +659,8 @@
 
       <article class="item-card" data-category="redes">
         <div class="pdf-preview-box">
-          <iframe src="CERTIFICADOR/Practica_Acceso_Remoto.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=700&q=80" alt="Cisco Packet Tracer Network Topology" class="img-preview">
+          <span class="preview-badge-overlay">CISCO TOPOLOGY</span>
         </div>
         <div class="card-top">
           <span class="issuer">Práctica de Redes</span>
