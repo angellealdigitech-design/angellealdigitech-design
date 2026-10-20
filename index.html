@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,34 +7,29 @@
   <title>Ángel Leal Delgado | Administrador de Sistemas y Redes (ASIR)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #0b0f19;
-      --bg-surface: #111827;
-      --bg-card: rgba(17, 24, 39, 0.85);
-      --bg-card-hover: rgba(24, 34, 53, 0.95);
+      /* PALETA CYBER-TERMINAL MODERNA */
+      --bg-base: #08090c;
+      --bg-surface: #101218;
+      --bg-card: #13161f;
+      --bg-card-hover: #191d29;
       
-      --border-subtle: rgba(255, 255, 255, 0.07);
-      --border-highlight: rgba(56, 189, 248, 0.4);
+      --border-subtle: #1e2230;
+      --border-highlight: #00f5a0;
       
-      --primary: #38bdf8;
-      --primary-hover: #0ea5e9;
-      --primary-soft: rgba(56, 189, 248, 0.12);
+      --neon-green: #00f5a0;
+      --neon-green-glow: rgba(0, 245, 160, 0.2);
+      --neon-purple: #9d4edd;
+      --neon-cyan: #00d2ff;
       
-      --accent: #6366f1;
-      --accent-soft: rgba(99, 102, 241, 0.15);
-      
-      --success: #10b981;
-      --success-soft: rgba(16, 185, 129, 0.15);
-      
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
+      --text-main: #e2e8f0;
+      --text-muted: #8892b0;
       --text-bright: #ffffff;
       
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
+      --radius-sm: 6px;
+      --radius-md: 10px;
     }
 
     * {
@@ -47,10 +43,11 @@
       color: var(--text-main);
       font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.6;
+      /* Malla geométrica técnica sutil de fondo */
       background-image: 
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.12), transparent),
-        radial-gradient(circle at 90% 40%, rgba(99, 102, 241, 0.06), transparent 50%),
-        radial-gradient(circle at 10% 80%, rgba(16, 185, 129, 0.05), transparent 40%);
+        linear-gradient(rgba(0, 245, 160, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 245, 160, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
       background-attachment: fixed;
       padding: 0 1.25rem 5rem;
     }
@@ -60,56 +57,56 @@
       margin: 0 auto;
     }
 
-    /* HERO SECTION */
+    /* HEADER */
     header.hero {
-      padding: 5rem 1rem 3.5rem;
+      padding: 4.5rem 1rem 3rem;
       text-align: center;
-      position: relative;
     }
 
     .status-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      background: var(--success-soft);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: #34d399;
+      background: rgba(0, 245, 160, 0.08);
+      border: 1px solid rgba(0, 245, 160, 0.35);
+      color: var(--neon-green);
       font-size: 0.82rem;
-      font-weight: 600;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
       padding: 0.4rem 1.1rem;
       border-radius: 999px;
       margin-bottom: 1.5rem;
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+      box-shadow: 0 0 15px var(--neon-green-glow);
     }
 
     .status-dot {
       width: 8px;
       height: 8px;
-      background-color: #34d399;
+      background-color: var(--neon-green);
       border-radius: 50%;
-      box-shadow: 0 0 10px #34d399;
+      box-shadow: 0 0 10px var(--neon-green);
       animation: pulse 2s infinite ease-in-out;
     }
 
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(0.85); }
+      50% { opacity: 0.3; transform: scale(0.8); }
     }
 
     header.hero h1 {
       font-size: clamp(2.4rem, 5vw, 3.6rem);
       font-weight: 800;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.03em;
       margin-bottom: 0.8rem;
       color: var(--text-bright);
     }
 
     .subtitle {
-      font-size: 1.2rem;
-      color: var(--primary);
+      font-size: 1.15rem;
+      color: var(--neon-green);
       font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
       margin-bottom: 1.2rem;
-      letter-spacing: -0.01em;
     }
 
     .bio {
@@ -131,7 +128,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      background: rgba(255, 255, 255, 0.03);
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       color: var(--text-main);
       text-decoration: none;
@@ -140,15 +137,13 @@
       font-size: 0.9rem;
       font-weight: 600;
       transition: all 0.25s ease;
-      backdrop-filter: blur(12px);
     }
 
     .contact-pill:hover {
-      border-color: var(--primary);
-      background: var(--primary-soft);
-      color: var(--primary);
+      border-color: var(--neon-green);
+      color: var(--neon-green);
       transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+      box-shadow: 0 4px 15px var(--neon-green-glow);
     }
 
     /* MÉTRICAS */
@@ -160,30 +155,35 @@
     }
 
     .metric-card {
-      background: var(--bg-card);
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--neon-green);
       border-radius: var(--radius-md);
       padding: 1.4rem;
       text-align: center;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-2px);
     }
 
     .metric-card span.num {
       display: block;
       font-size: 1.55rem;
       font-weight: 800;
-      color: var(--primary);
+      color: var(--text-bright);
       font-family: 'JetBrains Mono', monospace;
       margin-bottom: 0.25rem;
     }
 
     .metric-card span.label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      font-size: 0.78rem;
+      color: var(--neon-green);
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 600;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     /* ENCABEZADOS DE SECCIÓN */
@@ -198,7 +198,7 @@
 
     .section-header h2 {
       font-size: 1.55rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -0.02em;
       color: var(--text-bright);
     }
@@ -206,12 +206,12 @@
     .section-header .tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
-      color: var(--primary);
-      background: var(--primary-soft);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: #08090c;
+      background: var(--neon-green);
       padding: 0.25rem 0.7rem;
-      border-radius: 6px;
-      font-weight: 600;
+      border-radius: 4px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
     }
 
     /* HABILIDADES GRID */
@@ -222,25 +222,25 @@
     }
 
     .skill-box {
-      background: var(--bg-card);
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 1.5rem;
       transition: all 0.25s ease;
-      backdrop-filter: blur(12px);
     }
 
     .skill-box:hover {
-      border-color: rgba(56, 189, 248, 0.3);
+      border-color: var(--neon-green);
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
     }
 
     .skill-box h3 {
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--neon-green);
       margin-bottom: 0.6rem;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     .skill-box p {
@@ -257,15 +257,15 @@
     }
 
     .subject-card {
-      background: var(--bg-card);
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
+      border-top: 2px solid var(--neon-purple);
       border-radius: var(--radius-md);
       padding: 1.6rem;
-      backdrop-filter: blur(12px);
     }
 
     .subject-card h3 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 1rem;
       color: var(--text-bright);
@@ -287,11 +287,12 @@
     }
 
     .subject-card li::before {
-      content: "▹";
+      content: ">";
       position: absolute;
       left: 0;
-      color: var(--primary);
-      font-size: 0.95rem;
+      color: var(--neon-green);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
     }
 
     .subject-card li strong {
@@ -308,30 +309,29 @@
     }
 
     .filter-btn {
-      background: rgba(255, 255, 255, 0.03);
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       color: var(--text-muted);
-      font-family: inherit;
-      font-size: 0.84rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
       font-weight: 600;
       padding: 0.55rem 1.2rem;
-      border-radius: 999px;
+      border-radius: var(--radius-sm);
       cursor: pointer;
       transition: all 0.2s ease;
     }
 
     .filter-btn:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--text-main);
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: var(--neon-green);
+      color: var(--neon-green);
     }
 
     .filter-btn.active {
-      background: var(--primary);
-      color: #0b0f19;
-      border-color: var(--primary);
-      font-weight: 700;
-      box-shadow: 0 0 15px var(--primary-glow);
+      background: var(--neon-green);
+      color: #08090c;
+      border-color: var(--neon-green);
+      font-weight: 800;
+      box-shadow: 0 0 15px var(--neon-green-glow);
     }
 
     /* TARJETAS DE PROYECTOS / CERTIFICADOS */
@@ -349,42 +349,25 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      backdrop-filter: blur(14px);
       transition: all 0.25s ease;
       position: relative;
     }
 
-    .item-card::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      opacity: 0.3;
-      transition: opacity 0.25s;
-    }
-
     .item-card:hover {
       background: var(--bg-card-hover);
-      border-color: var(--border-highlight);
+      border-color: rgba(0, 245, 160, 0.4);
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
-    }
-
-    .item-card:hover::after {
-      opacity: 1;
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7);
     }
 
     .pdf-preview-box {
       width: 100%;
       height: 215px;
-      background: #060911;
+      background: #050608;
       border-radius: var(--radius-sm);
       overflow: hidden;
       margin-bottom: 1.1rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
     }
 
     .pdf-preview-box iframe {
@@ -401,10 +384,10 @@
     .issuer {
       font-size: 0.74rem;
       font-family: 'JetBrains Mono', monospace;
-      color: var(--primary);
+      color: var(--neon-green);
       text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       margin-bottom: 0.45rem;
       display: block;
     }
@@ -431,13 +414,14 @@
     }
 
     .tech-chips span {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #cbd5e1;
+      background: #181c28;
+      border: 1px solid #282f44;
+      color: #00d2ff;
       font-size: 0.74rem;
       padding: 0.25rem 0.65rem;
-      border-radius: 6px;
+      border-radius: 4px;
       font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
     }
 
     .btn-actions {
@@ -449,31 +433,32 @@
     .primary-btn {
       display: block;
       text-align: center;
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-      color: #ffffff;
+      background: var(--neon-green);
+      color: #08090c;
       text-decoration: none;
       font-size: 0.86rem;
-      font-weight: 600;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
       padding: 0.7rem 1rem;
       border-radius: var(--radius-sm);
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      border: 1px solid var(--neon-green);
       transition: all 0.2s ease;
     }
 
     .primary-btn:hover {
-      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-      color: #0b0f19;
-      box-shadow: 0 4px 16px var(--primary-glow);
+      background: #00d98d;
+      box-shadow: 0 0 15px var(--neon-green-glow);
     }
 
     .secondary-btn {
       display: block;
       text-align: center;
-      background: rgba(255, 255, 255, 0.04);
-      color: #e2e8f0;
+      background: transparent;
+      color: var(--text-main);
       text-decoration: none;
       font-size: 0.86rem;
       font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
       padding: 0.7rem 1rem;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-subtle);
@@ -481,9 +466,9 @@
     }
 
     .secondary-btn:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-      color: var(--text-bright);
+      border-color: var(--neon-green);
+      color: var(--neon-green);
+      background: rgba(0, 245, 160, 0.05);
     }
 
     footer {
@@ -493,6 +478,7 @@
       border-top: 1px solid var(--border-subtle);
       font-size: 0.86rem;
       color: #64748b;
+      font-family: 'JetBrains Mono', monospace;
     }
   </style>
 </head>
@@ -501,7 +487,7 @@
   <div class="container">
     <header class="hero">
       <div class="status-badge">
-        <span class="status-dot"></span> Disponible para FCT / Prácticas
+        <span class="status-dot"></span> DISPONIBLE PARA FCT / PRÁCTICAS
       </div>
       <h1>Ángel Leal Delgado</h1>
       <div class="subtitle">Técnico SMR &bull; Estudiante de 2.º año ASIR en DIGITECH (Madrid)</div>
@@ -545,19 +531,19 @@
     <div class="skills-grid">
       <div class="skill-box">
         <h3>🐧 Sistemas Operativos</h3>
-        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS[cite: 1].</p>
+        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS.</p>
       </div>
       <div class="skill-box">
         <h3>🌐 Redes & Routing</h3>
-        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark[cite: 1].</p>
+        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark.</p>
       </div>
       <div class="skill-box">
         <h3>🛡️ Ciberseguridad</h3>
-        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad[cite: 1].</p>
+        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad.</p>
       </div>
       <div class="skill-box">
         <h3>⚡ Servicios e Infraestructura</h3>
-        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, DNS Bind9, streaming con Icecast2 y virtualización con VMware y VirtualBox[cite: 1, 28, 54, 69].</p>
+        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, DNS Bind9, streaming con Icecast2 y virtualización con VMware y VirtualBox.</p>
       </div>
     </div>
 
@@ -571,9 +557,9 @@
       <div class="subject-card">
         <h3>🌐 Planificación y Administración de Redes</h3>
         <ul>
-          <li><strong>Topologías LAN/WAN:</strong> Diseño sobre Packet Tracer con cálculo VLSM en IPv4 e IPv6[cite: 94, 96].</li>
-          <li><strong>Switching Avanzado:</strong> Segmentación por VLANs, enlaces troncales y enrutamiento inter-VLAN[cite: 94, 96].</li>
-          <li><strong>Enrutamiento:</strong> Tablas estáticas, rutas por políticas y protocolos dinámicos[cite: 94].</li>
+          <li><strong>Topologías LAN/WAN:</strong> Diseño sobre Packet Tracer con cálculo VLSM en IPv4 e IPv6.</li>
+          <li><strong>Switching Avanzado:</strong> Segmentación por VLANs, enlaces troncales y enrutamiento inter-VLAN.</li>
+          <li><strong>Enrutamiento:</strong> Tablas estáticas, rutas por políticas y protocolos dinámicos.</li>
         </ul>
       </div>
 
@@ -581,40 +567,40 @@
         <h3>🛡️ Seguridad y Alta Disponibilidad</h3>
         <ul>
           <li><strong>Seguridad Perimetral:</strong> Despliegue de túneles VPN y filtrado exhaustivo por ACLs.</li>
-          <li><strong>Auditoría de Red:</strong> Monitorización de paquetes, diagnóstico de anomalías e inspección de tráfico[cite: 1].</li>
-          <li><strong>Continuidad de Negocio:</strong> Configuraciones RAID, políticas de backup y tolerancia a fallos[cite: 1].</li>
+          <li><strong>Auditoría de Red:</strong> Monitorización de paquetes, diagnóstico de anomalías e inspección de tráfico.</li>
+          <li><strong>Continuidad de Negocio:</strong> Configuraciones RAID, políticas de backup y tolerancia a fallos.</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>🖥️ Administración de Sistemas</h3>
         <ul>
-          <li><strong>Linux Server:</strong> Permisos avanzados, gestión de almacenamiento LVM y scripts en Bash[cite: 1].</li>
-          <li><strong>Windows Server:</strong> Despliegue de dominio Active Directory, estructura OUs y directivas GPO[cite: 1].</li>
+          <li><strong>Linux Server:</strong> Permisos avanzados, gestión de almacenamiento LVM y scripts en Bash.</li>
+          <li><strong>Windows Server:</strong> Despliegue de dominio Active Directory, estructura OUs y directivas GPO.</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>🌍 Servicios de Red e Internet</h3>
         <ul>
-          <li><strong>Infraestructura Base:</strong> Servidores DHCP con reservas y resolución de nombres DNS Bind9[cite: 1, 28, 96].</li>
-          <li><strong>Servidores Seguros:</strong> Hardening de servidores Web (Apache/Nginx), SSH y servicios multimedia[cite: 1, 54, 69].</li>
+          <li><strong>Infraestructura Base:</strong> Servidores DHCP con reservas y resolución de nombres DNS Bind9.</li>
+          <li><strong>Servidores Seguros:</strong> Hardening de servidores Web (Apache/Nginx), SSH y servicios multimedia.</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>🗄️ Gestión de Bases de Datos</h3>
         <ul>
-          <li><strong>Modelado Relacional:</strong> Normalización, integridad referencial y diagramas E/R[cite: 1].</li>
-          <li><strong>MySQL / MariaDB:</strong> Consultas complejas DDL/DML, gestión de privilegios y backups[cite: 1].</li>
+          <li><strong>Modelado Relacional:</strong> Normalización, integridad referencial y diagramas E/R.</li>
+          <li><strong>MySQL / MariaDB:</strong> Consultas complejas DDL/DML, gestión de privilegios y backups.</li>
         </ul>
       </div>
 
       <div class="subject-card">
         <h3>☁️ Implantación de Aplicaciones Web</h3>
         <ul>
-          <li><strong>Pilas LAMP:</strong> Puesta en marcha de entornos Linux + Apache + MariaDB + PHP[cite: 1].</li>
-          <li><strong>Sistemas CMS:</strong> Instalación de gestores de contenidos y resolución de incidencias web[cite: 1].</li>
+          <li><strong>Pilas LAMP:</strong> Puesta en marcha de entornos Linux + Apache + MariaDB + PHP.</li>
+          <li><strong>Sistemas CMS:</strong> Instalación de gestores de contenidos y resolución de incidencias web.</li>
         </ul>
       </div>
     </div>
@@ -642,7 +628,7 @@
         <div class="card-top">
           <span class="issuer">Práctica de Redes</span>
           <h3>Red Corporativa TecnoSys</h3>
-          <p>Diseño de red corporativa para 120 puestos con 8 VLANs, cálculo de subredes VLSM, enrutamiento inter-VLAN con switch multicapa y telefonía IP con Cisco 2811[cite: 94, 96, 98, 99, 100].</p>
+          <p>Diseño de red corporativa para 120 puestos con 8 VLANs, cálculo de subredes VLSM, enrutamiento inter-VLAN con switch multicapa y telefonía IP con Cisco 2811.</p>
           <div class="tech-chips">
             <span>Packet Tracer (.PKT)</span>
             <span>VLANs & VLSM</span>
@@ -683,7 +669,7 @@
         <div class="card-top">
           <span class="issuer">Práctica de Servicios</span>
           <h3>Servidor DNS con BIND9</h3>
-          <p>Instalación y configuración de BIND9 en Ubuntu Server con zonas de resolución directa e inversa, y pruebas de transferencia de zona entre servidores[cite: 29, 32, 39, 42, 44, 52].</p>
+          <p>Instalación y configuración de BIND9 en Ubuntu Server con zonas de resolución directa e inversa, y pruebas de transferencia de zona entre servidores.</p>
           <div class="tech-chips">
             <span>Ubuntu Server</span>
             <span>BIND9</span>
@@ -703,7 +689,7 @@
         <div class="card-top">
           <span class="issuer">Práctica de Sistemas</span>
           <h3>Gestión de Acceso Remoto</h3>
-          <p>Acceso y administración remota en consola mediante SSH/PuTTY y entorno gráfico con RDP (XRDP y Remmina) conectando máquinas Linux y Windows[cite: 70, 71, 72, 75, 77, 80].</p>
+          <p>Acceso y administración remota en consola mediante SSH/PuTTY y entorno gráfico con RDP (XRDP y Remmina) conectando máquinas Linux y Windows.</p>
           <div class="tech-chips">
             <span>SSH / PuTTY</span>
             <span>RDP / XRDP</span>
@@ -723,7 +709,7 @@
         <div class="card-top">
           <span class="issuer">Práctica de Servicios</span>
           <h3>Servidor de Streaming (Icecast2)</h3>
-          <p>Montaje de servidor de streaming de audio en Ubuntu Server con Icecast2 e Ices2, transcodificando pistas de audio a OGG mediante FFmpeg[cite: 55, 56, 60, 61, 63].</p>
+          <p>Montaje de servidor de streaming de audio en Ubuntu Server con Icecast2 e Ices2, transcodificando pistas de audio a OGG mediante FFmpeg.</p>
           <div class="tech-chips">
             <span>Icecast2</span>
             <span>Ices2</span>
@@ -743,7 +729,7 @@
         <div class="card-top">
           <span class="issuer">Práctica de Robótica</span>
           <h3>Robot Autónomo ASTI (Arduino)</h3>
-          <p>Diseño y montaje de robot móvil con Arduino Uno, sensor de distancia ultrasónico HC-SR04 e infrarrojos TCRT5000 para navegación siguelíneas[cite: 83, 84, 87, 91].</p>
+          <p>Diseño y montaje de robot móvil con Arduino Uno, sensor de distancia ultrasónico HC-SR04 e infrarrojos TCRT5000 para navegación siguelíneas.</p>
           <div class="tech-chips">
             <span>Arduino</span>
             <span>Sensores Ultrasonidos</span>
@@ -763,7 +749,7 @@
         <div class="card-top">
           <span class="issuer">Práctica de Sistemas</span>
           <h3>Virtualización de macOS en VirtualBox</h3>
-          <p>Configuración del entorno EFI con comandos VBoxManage, particionado de almacenamiento en APFS y administración de usuarios en macOS[cite: 8, 9, 11, 17, 21].</p>
+          <p>Configuración del entorno EFI con comandos VBoxManage, particionado de almacenamiento en APFS y administración de usuarios en macOS.</p>
           <div class="tech-chips">
             <span>VirtualBox</span>
             <span>VBoxManage / EFI</span>
