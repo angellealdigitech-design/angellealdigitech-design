@@ -11,6 +11,7 @@
     :root {
       --bg-main: #090d16;
       --bg-card: rgba(18, 24, 38, 0.75);
+      --bg-card-hover: rgba(26, 35, 56, 0.9);
       --border: rgba(255, 255, 255, 0.08);
       --border-accent: rgba(56, 189, 248, 0.3);
       --primary: #38bdf8;
@@ -44,6 +45,7 @@
       margin: 0 auto;
     }
 
+    /* HEADER */
     header.hero {
       padding: 4rem 1rem 3rem;
       text-align: center;
@@ -132,6 +134,40 @@
       box-shadow: 0 4px 15px var(--primary-glow);
     }
 
+    /* METRICAS */
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2.5rem 0 3.5rem;
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .metric-card span.num {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .metric-card span.label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    /* TITULOS */
     .section-header {
       display: flex;
       align-items: center;
@@ -156,6 +192,119 @@
       border-radius: 4px;
     }
 
+    /* GRID HABILIDADES */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .skill-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .skill-box:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .skill-box h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* COMPETENCIAS POR MODULOS */
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .subject-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .subject-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #ffffff;
+    }
+
+    .subject-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .subject-card li {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .subject-card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    .subject-card li strong {
+      color: #e2e8f0;
+    }
+
+    /* FILTROS */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin: 1.8rem 0;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      color: #090d16;
+      border-color: var(--primary);
+      box-shadow: 0 2px 10px var(--primary-glow);
+    }
+
+    /* CARDS GRID */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -308,7 +457,7 @@
       <h1>Ángel Leal Delgado</h1>
       <div class="subtitle">Técnico SMR &bull; Estudiante de 2.º año ASIR en DIGITECH (Madrid)</div>
       <p class="bio">
-        Portafolio con mis prácticas técnicas realizadas y mis certificaciones oficiales.
+        Portafolio técnico de prácticas de sistemas, laboratorios de infraestructura y certificaciones oficiales.
       </p>
       
       <div class="contact-nav">
@@ -318,14 +467,126 @@
       </div>
     </header>
 
+    <!-- METRICAS -->
+    <div class="metrics-bar">
+      <div class="metric-card">
+        <span class="num">2.º ASIR</span>
+        <span class="label">Grado Superior Activo</span>
+      </div>
+      <div class="metric-card">
+        <span class="num">SMR</span>
+        <span class="label">Técnico Oficial</span>
+      </div>
+      <div class="metric-card">
+        <span class="num">Cisco NetAcad</span>
+        <span class="label">Credenciales Oficiales</span>
+      </div>
+      <div class="metric-card">
+        <span class="num">Prácticas</span>
+        <span class="label">Laboratorios Reales</span>
+      </div>
+    </div>
+
+    <!-- HABILIDADES -->
     <div class="section-header">
-      <h2>Prácticas Técnicas</h2>
+      <h2>Habilidades Técnicas</h2>
+      <span class="tag">STACK</span>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h3>🐧 Sistemas Operativos</h3>
+        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS.</p>
+      </div>
+      <div class="skill-box">
+        <h3>🌐 Redes & Routing</h3>
+        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark.</p>
+      </div>
+      <div class="skill-box">
+        <h3>🛡️ Ciberseguridad</h3>
+        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad.</p>
+      </div>
+      <div class="skill-box">
+        <h3>⚡ Servicios e Infraestructura</h3>
+        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, DNS Bind9, streaming con Icecast2 y virtualización con VMware y VirtualBox.</p>
+      </div>
+    </div>
+
+    <!-- COMPETENCIAS POR MODULOS -->
+    <div class="section-header">
+      <h2>Competencias Aplicadas en ASIR</h2>
+      <span class="tag">FORMACIÓN</span>
+    </div>
+
+    <div class="subjects-grid">
+      <div class="subject-card">
+        <h3>🌐 Planificación y Administración de Redes</h3>
+        <ul>
+          <li><strong>Topologías LAN/WAN:</strong> Diseño sobre Packet Tracer con cálculo VLSM en IPv4 e IPv6.</li>
+          <li><strong>Switching Avanzado:</strong> Segmentación por VLANs, enlaces troncales y enrutamiento inter-VLAN.</li>
+          <li><strong>Enrutamiento:</strong> Tablas estáticas, rutas por políticas y protocolos dinámicos.</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <h3>🛡️ Seguridad y Alta Disponibilidad</h3>
+        <ul>
+          <li><strong>Seguridad Perimetral:</strong> Despliegue de túneles VPN y filtrado exhaustivo por ACLs.</li>
+          <li><strong>Auditoría de Red:</strong> Monitorización de paquetes, diagnóstico de anomalías e inspección de tráfico.</li>
+          <li><strong>Continuidad de Negocio:</strong> Configuraciones RAID, políticas de backup y tolerancia a fallos.</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <h3>🖥️ Administración de Sistemas</h3>
+        <ul>
+          <li><strong>Linux Server:</strong> Permisos avanzados, gestión de almacenamiento LVM y scripts en Bash.</li>
+          <li><strong>Windows Server:</strong> Despliegue de dominio Active Directory, estructura OUs y directivas GPO.</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <h3>🌍 Servicios de Red e Internet</h3>
+        <ul>
+          <li><strong>Infraestructura Base:</strong> Servidores DHCP con reservas y resolución de nombres DNS Bind9.</li>
+          <li><strong>Servidores Seguros:</strong> Hardening de servidores Web (Apache/Nginx), SSH y servicios multimedia.</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <h3>🗄️ Gestión de Bases de Datos</h3>
+        <ul>
+          <li><strong>Modelado Relacional:</strong> Normalización, integridad referencial y diagramas E/R.</li>
+          <li><strong>MySQL / MariaDB:</strong> Consultas complejas DDL/DML, gestión de privilegios y backups.</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <h3>☁️ Implantación de Aplicaciones Web</h3>
+        <ul>
+          <li><strong>Pilas LAMP:</strong> Puesta en marcha de entornos Linux + Apache + MariaDB + PHP.</li>
+          <li><strong>Sistemas CMS:</strong> Instalación de gestores de contenidos y resolución de incidencias web.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PRACTICAS TECNICAS -->
+    <div class="section-header">
+      <h2>Prácticas Técnicas y Laboratorios</h2>
       <span class="tag">PRÁCTICAS</span>
     </div>
 
-    <section class="cards-grid">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterGallery('all', 'practicas-grid')">Todas las Prácticas</button>
+      <button class="filter-btn" onclick="filterGallery('redes', 'practicas-grid')">Redes</button>
+      <button class="filter-btn" onclick="filterGallery('sistemas', 'practicas-grid')">Sistemas</button>
+      <button class="filter-btn" onclick="filterGallery('servicios', 'practicas-grid')">Servicios</button>
+      <button class="filter-btn" onclick="filterGallery('robotica', 'practicas-grid')">Robótica</button>
+    </div>
 
-      <article class="item-card">
+    <main class="cards-grid" id="practicas-grid">
+
+      <article class="item-card" data-category="redes">
         <div class="card-top">
           <span class="issuer">Práctica de Redes</span>
           <h3>Red Corporativa TecnoSys</h3>
@@ -343,7 +604,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="redes">
         <div class="card-top">
           <span class="issuer">Práctica de Redes</span>
           <h3>Despliegue de VPN & ACLs</h3>
@@ -360,7 +621,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="servicios">
         <div class="card-top">
           <span class="issuer">Práctica de Servicios</span>
           <h3>Servidor DNS con BIND9</h3>
@@ -377,7 +638,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="sistemas">
         <div class="card-top">
           <span class="issuer">Práctica de Sistemas</span>
           <h3>Gestión de Acceso Remoto</h3>
@@ -394,7 +655,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="servicios">
         <div class="card-top">
           <span class="issuer">Práctica de Servicios</span>
           <h3>Servidor de Streaming (Icecast2)</h3>
@@ -411,7 +672,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="robotica">
         <div class="card-top">
           <span class="issuer">Práctica de Robótica</span>
           <h3>Robot Autónomo ASTI (Arduino)</h3>
@@ -428,7 +689,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="sistemas">
         <div class="card-top">
           <span class="issuer">Práctica de Sistemas</span>
           <h3>Virtualización de macOS en VirtualBox</h3>
@@ -445,16 +706,24 @@
         </div>
       </article>
 
-    </section>
+    </main>
 
+    <!-- CERTIFICADOS OFICIALES -->
     <div class="section-header">
-      <h2>Certificados Oficiales</h2>
+      <h2>Acreditaciones y Certificaciones Oficiales</h2>
       <span class="tag">CERTIFICADOS</span>
     </div>
 
-    <section class="cards-grid">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterGallery('all', 'cert-grid')">Todos los Certificados</button>
+      <button class="filter-btn" onclick="filterGallery('cisco', 'cert-grid')">Cisco NetAcad</button>
+      <button class="filter-btn" onclick="filterGallery('ciberseguridad', 'cert-grid')">Ciberseguridad</button>
+      <button class="filter-btn" onclick="filterGallery('ia', 'cert-grid')">Inteligencia Artificial</button>
+    </div>
 
-      <article class="item-card">
+    <main class="cards-grid" id="cert-grid">
+
+      <article class="item-card" data-category="cisco ciberseguridad">
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Ethical Hacker</h3>
@@ -470,7 +739,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="cisco ciberseguridad">
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Endpoint Security</h3>
@@ -486,7 +755,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="cisco ciberseguridad">
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Introduction to Cybersecurity</h3>
@@ -502,7 +771,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="cisco">
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Packet Tracer & Ecosistemas IoT</h3>
@@ -519,7 +788,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="ia">
         <div class="card-top">
           <span class="issuer">BIG School</span>
           <h3>Agentes de IA & Automatización</h3>
@@ -536,7 +805,7 @@
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card" data-category="cisco">
         <div class="card-top">
           <span class="issuer">Cisco Networking Academy</span>
           <h3>Greenhouse Gas Accounting for IT</h3>
@@ -552,12 +821,32 @@
         </div>
       </article>
 
-    </section>
+    </main>
 
     <footer>
       <p>Ángel Leal Delgado &bull; Técnico en Sistemas Microinformáticos y Redes &bull; Estudiante ASIR</p>
     </footer>
   </div>
+
+  <script>
+    function filterGallery(category, gridId) {
+      const grid = document.getElementById(gridId);
+      const parentSection = grid.previousElementSibling;
+      const buttons = parentSection.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const items = grid.querySelectorAll('.item-card');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category').includes(category)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
