@@ -226,6 +226,90 @@
       letter-spacing: 0.05em;
     }
 
+    /* BLOQUE FORMACIÓN Y EXPERIENCIA */
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.3rem;
+    }
+
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.6rem;
+      backdrop-filter: blur(12px);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .timeline-card:hover {
+      border-color: var(--border-focus);
+      transform: translateY(-2px);
+    }
+
+    .timeline-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .timeline-period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--primary);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .timeline-center {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    .timeline-card h3 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .timeline-card ul {
+      list-style: none;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .timeline-card li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .timeline-card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -575,7 +659,7 @@
       <!-- PRESENTACIÓN PROFESIONAL -->
       <div class="bio-container">
         <p>
-          ¡Hola! Soy <strong>Ángel Leal</strong>, técnico en Sistemas Microinformáticos y Redes (SMR) y estudiante de segundo año del Grado Superior de <strong>Administración de Sistemas Informáticos en Red (ASIR)</strong>. Mi foco principal está orientado a la <strong>ciberseguridad defensiva, el bastionado de servidores y la arquitectura de redes</strong>: configuración de túneles VPN, políticas de control de acceso (ACLs), segmentación VLAN y monitorización forense con Wireshark.
+          ¡Hola! Soy <strong>Ángel Leal</strong>, técnico en Sistemas Microinformáticos y Redes (SMR) y estudiante de segundo año del Grado Superior de <strong>Administración de Sistemas Informáticos en Red (ASIR)</strong>. Mi foco principal está orientado a la <strong>ciberseguridad defensiva, el bastionado de servidores y la arquitectura de redes</strong>: configuración de túneles VPN, políticas de control de acceso (ACLs), segmentación VLAN y monitorización forense con Wireshark[cite: 1].
         </p>
         <p>
           De manera complementaria a mi perfil tecnológico, cuento con la titulación oficial de <strong>Socorrista Acuático en Piscinas e Instalaciones Acuáticas con Soporte Vital Básico y DESA (80h)</strong>. Esta formación me aporta habilidades transferibles clave en el ámbito de la ingeniería de sistemas: <strong>alta capacidad de concentración, prevención de riesgos, templanza bajo escenarios de estrés crítico y rápida capacidad de resolución</strong>.
@@ -610,6 +694,91 @@
       </div>
     </div>
 
+    <!-- SECCIÓN FORMACIÓN ACADÉMICA -->
+    <div class="section-header">
+      <h2>Formación Académica Oficial</h2>
+      <span class="tag">EDUCACIÓN</span>
+    </div>
+
+    <div class="timeline-grid">
+      <div class="timeline-card">
+        <div>
+          <div class="timeline-meta">
+            <span class="timeline-center">DIGITECH (Madrid)</span>
+            <span class="timeline-period">Cursando 2.º Año (Actualmente)</span>
+          </div>
+          <h3>C.F.G.S. Administración de Sistemas Informáticos en Red (ASIR)</h3>
+          <p>
+            Especialización técnica avanzada en arquitectura de redes corporativas, administración de entornos Windows Server / Linux CLI, servicios cloud, gestión de bases de datos relacionales, bastionado de seguridad y virtualización[cite: 1].
+          </p>
+        </div>
+        <ul>
+          <li>Planificación y segmentación de redes medianas/grandes con VLANs y VLSM.</li>
+          <li>Despliegue de servicios esenciales: BIND9, Apache, Nginx, DHCP, VPNs y ACLs[cite: 1].</li>
+        </ul>
+      </div>
+
+      <div class="timeline-card">
+        <div>
+          <div class="timeline-meta">
+            <span class="timeline-center">MEDAC (Madrid)</span>
+            <span class="timeline-period">Titulado Oficial</span>
+          </div>
+          <h3>C.F.G.M. Sistemas Microinformáticos y Redes (SMR)</h3>
+          <p>
+            Capacitación fundamental en montaje, ensamblaje, diagnóstico y mantenimiento correctivo/preventivo de hardware, configuración de sistemas operativos monopuesto/red y despliegue de cableado estructurado e infraestructuras locales.
+          </p>
+        </div>
+        <ul>
+          <li>Mantenimiento preventivo, soporte a usuarios y resolución de averías.</li>
+          <li>Configuración básica de redes locales (LAN) y sistemas cliente/servidor.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SECCIÓN EXPERIENCIA PROFESIONAL -->
+    <div class="section-header">
+      <h2>Experiencia Laboral</h2>
+      <span class="tag">TRAYECTORIA</span>
+    </div>
+
+    <div class="timeline-grid">
+      <div class="timeline-card">
+        <div>
+          <div class="timeline-meta">
+            <span class="timeline-center">Soporte Microinformático & Laboratorios TI</span>
+            <span class="timeline-period">Formación / Prácticas</span>
+          </div>
+          <h3>Técnico de Soporte & Mantenimiento de Sistemas</h3>
+          <p>
+            Diagnóstico, resolución de incidencias hardware y software, clonación y despliegue de sistemas operativos, saneamiento de equipos informáticos y configuración de periféricos y puestos de trabajo locales.
+          </p>
+        </div>
+        <ul>
+          <li>Atención a incidencias y mantenimiento correctivo de estaciones de trabajo.</li>
+          <li>Instalación y verificación de conexiones de red y cableado estructurado.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-card">
+        <div>
+          <div class="timeline-meta">
+            <span class="timeline-center">Instalaciones Acuáticas y Piscinas (Madrid)</span>
+            <span class="timeline-period">Socorrista Titulado</span>
+          </div>
+          <h3>Socorrista Acuático & Primer Interviniente (DESA)</h3>
+          <p>
+            Vigilancia, prevención activa de accidentes, supervisión de la normativa sanitaria y aplicación inmediata de primeros auxilios y soporte vital básico con desfibrilador externo en situaciones de emergencia.
+          </p>
+        </div>
+        <ul>
+          <li>Gestión de la calma y rápida toma de decisiones en situaciones de estrés crítico.</li>
+          <li>Responsabilidad sobre la seguridad integral de usuarios e instalaciones.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HABILIDADES TÉCNICAS -->
     <div class="section-header">
       <h2>Habilidades Técnicas</h2>
       <span class="tag">STACK</span>
@@ -618,19 +787,19 @@
     <div class="skills-grid">
       <div class="skill-box">
         <h3>🐧 Sistemas Operativos</h3>
-        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS.</p>
+        <p>Linux (Debian, Ubuntu Server) mediante terminal CLI; Windows Server con Active Directory, GPOs, DNS, DHCP y control de permisos NTFS[cite: 1].</p>
       </div>
       <div class="skill-box">
         <h3>🌐 Redes & Routing</h3>
-        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark.</p>
+        <p>Protocolos TCP/IP, direccionamiento IPv4/IPv6, subnetting VLSM, VLANs 802.1Q, enrutamiento estático/dinámico, Cisco Packet Tracer y Wireshark[cite: 1].</p>
       </div>
       <div class="skill-box">
         <h3>🛡️ Ciberseguridad</h3>
-        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad.</p>
+        <p>Listas de control de acceso (ACLs), túneles VPN, cortafuegos (iptables, UFW), bastionado, niveles RAID y copias de seguridad[cite: 1].</p>
       </div>
       <div class="skill-box">
         <h3>⚡ Servicios e Infraestructura</h3>
-        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, DNS Bind9, streaming con Icecast2 y virtualización con VMware y VirtualBox.</p>
+        <p>Servidores Apache, Nginx, SSH, FTP/SFTP, DNS Bind9, streaming con Icecast2 y virtualización con VMware y VirtualBox[cite: 1].</p>
       </div>
     </div>
 
@@ -664,8 +833,8 @@
           <ul>
             <li><strong>Filtrado Perimetral:</strong> Implementación de ACLs estándar y extendidas para control estricto de tráfico.</li>
             <li><strong>Comunicaciones Seguras:</strong> Despliegue de túneles VPN IPsec punto a punto entre sedes remotas.</li>
-            <li><strong>Auditoría & Análisis:</strong> Inspección forense de tráfico con Wireshark y detección de intrusiones en red.</li>
-            <li><strong>Tolerancia a Fallos:</strong> Implementación de arreglos RAID, snapshotting y políticas de copia 3-2-1.</li>
+            <li><strong>Auditoría & Análisis:</strong> Inspección forense de tráfico con Wireshark y detección de intrusiones en red[cite: 1].</li>
+            <li><strong>Tolerancia a Fallos:</strong> Implementación de arreglos RAID, snapshotting y políticas de copia 3-2-1[cite: 1].</li>
           </ul>
         </details>
       </div>
@@ -676,8 +845,8 @@
         <details class="subject-details">
           <summary>Ver temario aplicado y proyectos</summary>
           <ul>
-            <li><strong>Active Directory Domain Services:</strong> Bosques, dominios, árboles, OUs, roles FSMO y directivas de grupo (GPOs).</li>
-            <li><strong>Linux Server CLI:</strong> Gestión de permisos POSIX/ACLs, almacenamiento lógico LVM, cron jobs y scripting Bash.</li>
+            <li><strong>Active Directory Domain Services:</strong> Bosques, dominios, árboles, OUs, roles FSMO y directivas de grupo (GPOs)[cite: 1].</li>
+            <li><strong>Linux Server CLI:</strong> Gestión de permisos POSIX/ACLs, almacenamiento lógico LVM, cron jobs y scripting Bash[cite: 1].</li>
             <li><strong>Administración Remota:</strong> Servidores SSH con autenticación por par de claves y escritorios remotos XRDP/RDP.</li>
             <li><strong>Virtualización:</strong> Aprovisionamiento y parametrización EFI con VBoxManage y VMware ESXi.</li>
           </ul>
@@ -691,9 +860,9 @@
           <summary>Ver temario aplicado y proyectos</summary>
           <ul>
             <li><strong>Servidor de Nombres (BIND9):</strong> Configuración de zonas directas/inversas y transferencias de zona maestro-esclavo.</li>
-            <li><strong>Asignación Dinámica:</strong> Servidores DHCP con exclusiones, ámbitos múltiples y reservas por dirección MAC.</li>
-            <li><strong>Servidores Web y Streaming:</strong> Despliegue de servidores Apache/Nginx y plataformas de audio Icecast2/Ices2.</li>
-            <li><strong>Transferencia de Archivos:</strong> Despliegue de servidores seguros SFTP/VSFTPD con usuarios enjaulados.</li>
+            <li><strong>Asignación Dinámica:</strong> Servidores DHCP con exclusiones, ámbitos múltiples y reservas por dirección MAC[cite: 1].</li>
+            <li><strong>Servidores Web y Streaming:</strong> Despliegue de servidores Apache/Nginx y plataformas de audio Icecast2/Ices2[cite: 1].</li>
+            <li><strong>Transferencia de Archivos:</strong> Despliegue de servidores seguros SFTP/VSFTPD con usuarios enjaulados[cite: 1].</li>
           </ul>
         </details>
       </div>
@@ -704,9 +873,9 @@
         <details class="subject-details">
           <summary>Ver temario aplicado y proyectos</summary>
           <ul>
-            <li><strong>Modelado de Datos:</strong> Diagramas entidad-relación (E/R), transformación al modelo relacional y reglas de normalización.</li>
-            <li><strong>Lenguaje SQL:</strong> Sentencias DDL (definición), DML (manipulación), subconsultas complejas y joins.</li>
-            <li><strong>Administración MySQL / MariaDB:</strong> Gestión de roles, permisos a nivel de tabla, integridad referencial y backups lógicos.</li>
+            <li><strong>Modelado de Datos:</strong> Diagramas entidad-relación (E/R), transformación al modelo relacional y reglas de normalización[cite: 1].</li>
+            <li><strong>Lenguaje SQL:</strong> Sentencias DDL (definición), DML (manipulación), subconsultas complejas y joins[cite: 1].</li>
+            <li><strong>Administración MySQL / MariaDB:</strong> Gestión de roles, permisos a nivel de tabla, integridad referencial y backups lógicos[cite: 1].</li>
           </ul>
         </details>
       </div>
@@ -717,9 +886,9 @@
         <details class="subject-details">
           <summary>Ver temario aplicado y proyectos</summary>
           <ul>
-            <li><strong>Pilas LAMP:</strong> Integración de Linux, Apache2, MariaDB y módulos PHP con extensiones requeridas.</li>
-            <li><strong>Gestores de Contenidos:</strong> Instalación, aseguramiento y migración de plataformas CMS sobre bases de datos dedicadas.</li>
-            <li><strong>Depuración:</strong> Análisis de logs de acceso (`access.log`) y errores (`error.log`) para resolución de incidencias HTTP.</li>
+            <li><strong>Pilas LAMP:</strong> Integración de Linux, Apache2, MariaDB y módulos PHP con extensiones requeridas[cite: 1].</li>
+            <li><strong>Gestores de Contenidos:</strong> Instalación, aseguramiento y migración de plataformas CMS sobre bases de datos dedicadas[cite: 1].</li>
+            <li><strong>Depuración:</strong> Análisis de logs de acceso (`access.log`) y errores (`error.log`) para resolución de incidencias HTTP[cite: 1].</li>
           </ul>
         </details>
       </div>
