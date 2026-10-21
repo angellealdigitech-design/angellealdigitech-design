@@ -60,6 +60,14 @@
       text-align: center;
     }
 
+    .badges-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.6rem;
+    }
+
     .status-badge {
       display: inline-flex;
       align-items: center;
@@ -71,7 +79,6 @@
       font-weight: 600;
       padding: 0.45rem 1.15rem;
       border-radius: 999px;
-      margin-bottom: 1.6rem;
       backdrop-filter: blur(8px);
     }
 
@@ -648,9 +655,15 @@
 
   <div class="container">
     <header class="hero">
-      <div class="status-badge">
-        <span class="status-dot"></span> Disponible para FCT / Prácticas
+      <div class="badges-wrapper">
+        <div class="status-badge">
+          <span class="status-dot"></span> Disponible para FCT / Prácticas
+        </div>
+        <div class="status-badge">
+          🚗 Carnet B (Vehículo Propio)
+        </div>
       </div>
+
       <h1>Ángel Leal Delgado</h1>
       <div class="subtitle">Técnico SMR &bull; Estudiante de 2.º año ASIR en DIGITECH (Madrid)</div>
       
@@ -773,6 +786,23 @@
           <li>Gestión de la calma y rápida toma de decisiones en situaciones de estrés crítico.</li>
           <li>Responsabilidad sobre la seguridad integral de usuarios e instalaciones.</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- COMPETENCIAS ADICIONALES (IDIOMAS Y MOVILIDAD) -->
+    <div class="section-header">
+      <h2>Idiomas y Disponibilidad</h2>
+      <span class="tag">DATOS CLAVE</span>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h3>🇬🇧 Inglés (Nivel B1)</h3>
+        <p>Capacidad fluida para la comprensión y lectura de documentación técnica oficial, manuales de administración Cisco/Linux, interfaces CLI y registros de eventos/logs.</p>
+      </div>
+      <div class="skill-box">
+        <h3>🚗 Movilidad & Incorporación</h3>
+        <p><strong>Permiso de conducir B con vehículo propio</strong>. Plena disponibilidad geográfica en la Comunidad de Madrid y flexibilidad para desplazamientos a centros de trabajo.</p>
       </div>
     </div>
 
@@ -1068,6 +1098,27 @@
     </div>
 
     <main class="cards-grid" id="cert-grid">
+
+      <!-- NUEVO CERTIFICADO CISCO CON BADGE -->
+      <article class="item-card" data-category="cisco">
+        <div class="pdf-preview-box">
+          <iframe src="CERTIFICADOR/NetworkingDevicesandBasicConfigUpdate20261021-21-afytmp.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+        </div>
+        <div class="card-top">
+          <span class="issuer">Cisco Networking Academy</span>
+          <h3>Networking Devices and Initial Configuration</h3>
+          <p>Diseño de redes jerárquicas, subnetting IPv4, conmutación Ethernet, protocolos ARP, DNS, DHCP y configuración de dispositivos con Cisco IOS.</p>
+          <div class="tech-chips">
+            <span>Cisco IOS</span>
+            <span>Subnetting IPv4</span>
+            <span>Switching & Routing</span>
+            <span>NetAcad Badge</span>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <a href="CERTIFICADOR/NetworkingDevicesandBasicConfigUpdate20261021-21-afytmp.pdf" target="_blank" class="primary-btn">📄 Ver Certificado Oficial (PDF)</a>
+        </div>
+      </article>
 
       <article class="item-card" data-category="cisco ciberseguridad">
         <div class="pdf-preview-box">
