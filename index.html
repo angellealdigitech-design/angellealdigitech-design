@@ -1093,7 +1093,8 @@
 
       const items = grid.querySelectorAll('.item-card');
       items.forEach(item => {
-        if (category === 'all' || item.getAttribute('data-category').includes(category)) {
+        const categories = (item.getAttribute('data-category') || '').trim().split(/\s+/);
+        if (category === 'all' || categories.includes(category)) {
           item.style.display = 'flex';
         } else {
           item.style.display = 'none';
